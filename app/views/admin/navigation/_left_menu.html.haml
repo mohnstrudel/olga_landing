@@ -1,0 +1,72 @@
+%nav.navbar-default.navbar-static-side{:role => "navigation"}
+  .sidebar-collapse
+    %ul#side-menu.nav.metismenu
+      %li.nav-header
+        .dropdown.profile-element
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %span.clear
+              %span.block.m-t-xs
+                %strong.font-bold
+                  -if current_user
+                    ="#{current_user.first_name} #{current_user.second_name}"
+              %span.text-muted.text-xs.block
+                Art Director
+                %b.caret
+          %ul.dropdown-menu.animated.fadeInRight.m-t-xs
+            -if current_user
+              %li
+                =link_to edit_admin_user_path(current_user.id) do
+                  =t('admin.profile')
+              %li
+                =link_to destroy_user_session_path do
+                  =t('admin.logout')
+        .logo-element
+          IN+
+      =nav_link admin_path do
+        %i.fa.fa-area-chart
+        %span.nav-label
+          =t('admin.navigation.dashboard')
+      =nav_link "" do
+        %i.fa.fa-newspaper-o
+        %span.nav-label
+          =t('admin.navigation.posts.main')
+        %span.fa.arrow
+        %ul.nav.nav-second-level.collapse
+          %li.active
+            / =link_to t('admin.navigation.posts.all_posts'), admin_posts_path
+          %li
+            / =link_to t('admin.navigation.posts.new_post'), new_admin_post_path
+          %li
+            / =link_to t('admin.navigation.posts.post_categories'), admin_post_categories_path
+      =nav_link "" do
+        %i.fa.fa-file-text
+        %span.nav-label
+          =t('admin.navigation.pages.main')
+        %span.fa.arrow
+        %ul.nav.nav-second-level.collapse
+          %li.active
+            / =link_to t('admin.navigation.pages.all_pages'), admin_pages_path
+          %li
+            / =link_to t('admin.navigation.pages.new_page'), new_admin_page_path
+          %li
+            / =link_to t('admin.navigation.pages.page_categories'), admin_page_categories_path
+      =nav_link "" do
+        %i.fa.fa-users
+        %span.nav-label
+          =t('admin.navigation.users.main')
+        %span.fa.arrow
+        %ul.nav.nav-second-level.collapse
+          %li.active
+            / =link_to t('admin.navigation.users.all_users'), admin_users_path
+          %li
+            / =link_to t('admin.navigation.users.new_user'), new_admin_user_path
+
+      =nav_link "" do
+        %i.fa.fa-cog
+        %span.nav-label
+          =t('admin.navigation.settings.main')
+        %span.fa.arrow
+        %ul.nav.nav-second-level.collapse
+          %li.active
+            / =nav_link admin_settings_general_settings_path do
+            / =t('admin.navigation.settings.general')
