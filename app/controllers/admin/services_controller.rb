@@ -35,7 +35,7 @@ class Admin::ServicesController < AdminController
 	end
 
 	def service_params
-		params.require(:service).permit(Service.attribute_names(&:to_sym))
+		params.require(:service).permit(Service.attribute_names(&:to_sym).push( { pictures: [] }))
 	end
 
 end

@@ -4,6 +4,8 @@ class Service < ApplicationRecord
 
 	before_save :set_slug
 
+	mount_uploaders :pictures, PictureUploader
+
 	# include Bootsy::Container
 
 	extend FriendlyId
