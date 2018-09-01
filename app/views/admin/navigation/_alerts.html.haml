@@ -1,7 +1,11 @@
 -flash.each do |name, msg|
-  =content_tag(:div, msg, class: "panel panel-#{name}") do
-    .panel-heading
-      %i.fa.fa-warning
-      =name
-    .panel-body
-      =msg
+	=content_tag(:div, msg, class: "panel panel-#{name}") do
+		.panel-heading
+			-if name == 'primary'
+				%i.fa.fa-check
+				Успех
+			-elsif name == 'danger'
+				%i.fa.fa-warning
+				Неудача
+		.panel-body
+			=msg

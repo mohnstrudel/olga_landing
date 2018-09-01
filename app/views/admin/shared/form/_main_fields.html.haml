@@ -20,7 +20,7 @@
     -if object.respond_to?(:title)
       .form-group
         %label.col-sm-2.control-label
-          =t('admin.form.model.title')
+          Название
         .col-sm-10
           =f.text_field :title, class: 'form-control'
       .hr-line-dashed
@@ -29,36 +29,37 @@
     -if object.respond_to?(:description)
       .form-group
         %label.col-sm-2.control-label
-          =t('admin.form.model.description')
+          Описание
         .col-sm-10
           =f.bootsy_area :description, class: 'form-control'
-          %span.help-block.m-b-none A block of help text that breaks onto a new line and may extend beyond one line.
+          %span.help-block.m-b-none Текст, который описывает данную запись.
       .hr-line-dashed
     -if object.respond_to?(:body)
       .form-group
         %label.col-sm-2.control-label
-          =t('admin.form.model.body')
+          Основной текст
         .col-sm-10
           =f.bootsy_area :body, class: 'form-control', rows: 12
+          %span.help-block.m-b-none Основной текст записи (если это новость, то текст самой новости, например).
       .hr-line-dashed
     -if object.respond_to?(:slug)
       .form-group
         %label.col-sm-2.control-label
-          =t('admin.form.model.slug')
+          Slug
         .col-sm-10
           =f.text_field :slug, class: 'form-control'
       .hr-line-dashed
     -if object.respond_to?(:page_category_id)
       .form-group
         %label.col-lg-2.control-label
-          =t('admin.form.model.category')
+          Категория
         .col-lg-10
           =f.select :page_category_id, PageCategory.all.map { |page_category| [ page_category.title, page_category.id ] }, {}, { class: "form-control m-b" } 
       .hr-line-dashed
     -if object.respond_to?(:post_category_id)
       .form-group
         %label.col-lg-2.control-label
-          =t('admin.form.model.category')
+          Категория новости
         .col-lg-10
           =f.select :post_category_id, PostCategory.all.map { |post_category| [ post_category.title, post_category.id ] }, {}, { class: "form-control m-b" }
       .hr-line-dashed
@@ -67,9 +68,13 @@
     =render partial: "admin/shared/form/user_fields", locals: { f: f, object: object }
     / User part end
 
+    / Services part begin (only unique to services fields)
+    =render partial: "admin/shared/form/services/service_fields", locals: { f: f, object: object }
+    / Services part end
+
 
     .hr-line-dashed
     .form-group
       .col-sm-4.col-sm-offset-2
-        =link_to t('admin.form.actions.back'), send("admin_#{local_assigns[:namespace]}#{object_name(object).pluralize}_path"), class: 'btn btn-white'
-        =f.submit t('admin.form.actions.save'), class: 'btn btn-primary'
+        =link_to 'Назад', send("admin_#{local_assigns[:namespace]}#{object_name(object).pluralize}_path"), class: 'btn btn-white'
+        =f.submit 'Сохранить', class: 'btn btn-primary'

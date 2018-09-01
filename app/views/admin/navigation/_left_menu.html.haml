@@ -29,27 +29,27 @@
       =nav_link "" do
         %i.fa.fa-newspaper-o
         %span.nav-label
-          =t('admin.navigation.posts.main')
+          Новости
         %span.fa.arrow
         %ul.nav.nav-second-level.collapse
           %li.active
-            / =link_to t('admin.navigation.posts.all_posts'), admin_posts_path
+            =link_to 'Все новости', admin_posts_path
           %li
-            / =link_to t('admin.navigation.posts.new_post'), new_admin_post_path
+            =link_to 'Новая запись', new_admin_post_path
           %li
-            / =link_to t('admin.navigation.posts.post_categories'), admin_post_categories_path
+            =link_to 'Категории новостей', admin_post_categories_path
       =nav_link "" do
-        %i.fa.fa-file-text
+        %i.fa.fa-flask
         %span.nav-label
-          =t('admin.navigation.pages.main')
+          Услуги салона
         %span.fa.arrow
         %ul.nav.nav-second-level.collapse
           %li.active
-            / =link_to t('admin.navigation.pages.all_pages'), admin_pages_path
+            =link_to 'Все услуги', admin_services_path
           %li
-            / =link_to t('admin.navigation.pages.new_page'), new_admin_page_path
+            =link_to 'Новая услуга', new_admin_service_path
           %li
-            / =link_to t('admin.navigation.pages.page_categories'), admin_page_categories_path
+            =link_to 'Категории услуг', admin_service_categories_path
       =nav_link "" do
         %i.fa.fa-users
         %span.nav-label

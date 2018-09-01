@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  phone: MyString
+  message: MyString
+  service: one
+  date: 2018-09-01 12:29:27
+  type: 
+
+two:
+  name: MyString
+  phone: MyString
+  message: MyString
+  service: two
+  date: 2018-09-01 12:29:27
+  type: 

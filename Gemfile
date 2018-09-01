@@ -42,6 +42,11 @@ gem 'devise'
 # Use font awesome and Glyphicons
 gem "font-awesome-rails"
 gem 'bootstrap-glyphicons'
+gem 'will_paginate'
+gem 'bootsy'
+# Use this gem for nice slugs in URLs
+gem 'friendly_id'
+gem 'russian'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

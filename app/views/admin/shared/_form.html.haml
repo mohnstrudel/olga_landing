@@ -16,10 +16,10 @@
           %li.active
             %a{"data-toggle" => "tab", :href => "#tab-1"}
               =t('admin.form.tab_main.title')
-          -if object.class.model_name.name.constantize.translates?
-            %li
-              %a{"data-toggle" => "tab", :href => "#tab-2"}
-                =t('admin.form.tab_translation')
+          / -if object.class.model_name.name.constantize.translates?
+          /   %li
+          /     %a{"data-toggle" => "tab", :href => "#tab-2"}
+          /       =t('admin.form.tab_translation')
         .tab-content
           #tab-1.tab-pane.active
             .panel-body
@@ -28,8 +28,8 @@
           / => []
           / Post.translated_attribute_names
           / => [:title, :body]
-          -if object.class.model_name.name.constantize.translates?
-            #tab-2.tab-pane
-              .panel-body
-                =render partial: "admin/shared/form/translation_fields.html.haml", locals: { f: f, object: object }
+          / -if object.class.model_name.name.constantize.translates?
+          /   #tab-2.tab-pane
+          /     .panel-body
+          /       =render partial: "admin/shared/form/translation_fields.html.haml", locals: { f: f, object: object }
     
