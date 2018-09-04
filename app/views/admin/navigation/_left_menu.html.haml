@@ -53,13 +53,13 @@
       =nav_link "" do
         %i.fa.fa-users
         %span.nav-label
-          =t('admin.navigation.users.main')
+          Сотрудники
         %span.fa.arrow
         %ul.nav.nav-second-level.collapse
           %li.active
-            / =link_to t('admin.navigation.users.all_users'), admin_users_path
+            =link_to 'Все сотрудники', admin_members_path
           %li
-            / =link_to t('admin.navigation.users.new_user'), new_admin_user_path
+            =link_to 'Новый сотрудник', new_admin_member_path
 
       =nav_link "" do
         %i.fa.fa-cog

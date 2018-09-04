@@ -72,6 +72,10 @@
     =render partial: "admin/shared/form/services/service_fields", locals: { f: f, object: object }
     / Services part end
 
+    / Members part begin (only unique to members fields)
+    =render partial: "admin/shared/form/members/member_fields", locals: { f: f, object: object }
+    / Members part end
+
 
     .hr-line-dashed
     .form-group

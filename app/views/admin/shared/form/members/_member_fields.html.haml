@@ -1,0 +1,37 @@
+-if object.respond_to?(:name)
+  .form-group
+    %label.col-sm-2.control-label
+      Имя и фамилия
+    .col-sm-10
+      =f.text_field :name, class: 'form-control'
+      %span.help-block.m-b-none Желательно именно в таком формате: Имя Фамилия
+  .hr-line-dashed
+
+-if object.respond_to?(:picture)
+  .form-group
+    %label.col-sm-2.control-label Фотография
+    .col-sm-8
+      .fileinput.fileinput-new.input-group{"data-provides" => "fileinput"}
+        .form-control{"data-trigger" => "fileinput"}
+          %i.glyphicon.glyphicon-file.fileinput-exists
+          %span.fileinput-filename
+        %span.input-group-addon.btn.btn-default.btn-file
+          %span.fileinput-new Выбрать файл
+          %span.fileinput-exists Поменять
+          =f.file_field :picture
+          
+        %a.input-group-addon.btn.btn-default.fileinput-exists{"data-dismiss" => "fileinput", :href => "#"} Удалить
+    .col-sm-2
+      -unless object.picture.nil?
+        =image_tag object.picture.url(:thumb_mini)
+  .hr-line-dashed
+
+-if object.respond_to?(:services)
+  .form-group
+    %label.col-sm-2.control-label
+      Услуги
+    .col-sm-10
+      =f.collection_select :service_ids, Service.all, :id, :title, { label: "Услуга/Услуги" }, { multiple: true, class: 'form-control select2_search_services'}
+      %span.help-block.m-b-none Услуги, которые выполняет мастер
+  .hr-line-dashed
+    

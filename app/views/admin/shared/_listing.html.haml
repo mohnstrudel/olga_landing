@@ -34,6 +34,12 @@
                 -if object.has_attribute? :first_name
                   %th
                     =t('admin.form.model.first_name')
+                -if object.has_attribute? :name
+                  %th
+                    Имя Фамилия
+                -if object.has_attribute? :picture
+                  %th
+                    Фотография
                 -if object.has_attribute? :body
                   %th
                     =t('admin.form.model.body')
@@ -61,6 +67,13 @@
                   -if obj.respond_to?(:first_name)
                     %td
                       =obj.first_name
+                  -if obj.respond_to?(:name)
+                    %td
+                      =obj.name
+                  -if obj.respond_to?(:picture)
+                    %td
+                      -unless obj.picture.nil?
+                        =image_tag obj.picture.url(:thumb_mini), width: 64
                   -if obj.respond_to?(:body)
                     %td
                       %small

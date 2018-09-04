@@ -45,3 +45,7 @@
 // REMOVED turbolinks
 
 // REMOVE require tree .
+
+// Custom scripts
+//= require admin/bulk_actions
+//= require admin/members
