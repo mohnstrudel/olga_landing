@@ -1,0 +1,17 @@
+-if object.respond_to?(:phone)
+  .form-group
+    %label.col-sm-2.control-label
+      Телефон
+    .col-sm-10
+      =f.text_field :phone, class: 'form-control'
+      %span.help-block.m-b-none Телефон заявки
+  .hr-line-dashed
+
+-if object.respond_to?(:message)
+  .form-group
+    %label.col-sm-2.control-label
+      Текст сообщения
+    .col-sm-10
+      =f.text_area :message, class: 'form-control'
+      %span.help-block.m-b-none Сообщение клиента
+  .hr-line-dashed

@@ -22,7 +22,7 @@
           
         %a.input-group-addon.btn.btn-default.fileinput-exists{"data-dismiss" => "fileinput", :href => "#"} Удалить
     .col-sm-2
-      -unless object.picture.nil?
+      -if object.picture.present?
         =image_tag object.picture.url(:thumb_mini)
   .hr-line-dashed
 

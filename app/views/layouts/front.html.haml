@@ -1,0 +1,11 @@
+!!!
+%html
+  %head
+    %title Ольга Лендос
+    = stylesheet_link_tag    'front', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %body
+    =yield
+
+  = javascript_include_tag 'front', 'data-turbolinks-track' => true

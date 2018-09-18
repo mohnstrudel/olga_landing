@@ -1,0 +1,6 @@
+-if object.respond_to?(:salary)
+  .form-group
+    %label.col-lg-2.control-label Заработная плата
+    .col-lg-10
+      =f.number_field :salary, class: "form-control"
+  .hr-line-dashed

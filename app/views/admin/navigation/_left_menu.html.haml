@@ -70,3 +70,18 @@
           %li.active
             / =nav_link admin_settings_general_settings_path do
             / =t('admin.navigation.settings.general')
+
+      =nav_link "" do
+        %i.fa.fa-users
+        %span.nav-label
+          Вакансии
+        %span.fa.arrow
+        %ul.nav.nav-second-level.collapse
+          %li.active
+            =link_to 'Все вакансии', admin_jobs_path
+          %li
+            =link_to 'Новая вакансия', new_admin_job_path
+      =nav_link admin_requests_path do
+        %i.fa.fa-flask
+        %span.nav-label
+          Заявки
