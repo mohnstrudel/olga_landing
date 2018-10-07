@@ -1,11 +1,18 @@
 !!!
 %html
-  %head
-    %title Ольга Лендос
-    = stylesheet_link_tag    'front', media: 'all', 'data-turbolinks-track' => true
-    = csrf_meta_tags
+	%head
+		%title Wow You Shine - Лаборатория чистой кожи
+		%meta{:charset => "utf-8"}/
+		%meta{:content => "ie=edge", "http-equiv" => "x-ua-compatible"}/
+		%meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+		/ %link{:href => "images/favicon.png", :rel => "icon", :type => "image/png"}/
+		/ %link{:href => "images/favicon.png", :rel => "icon", :type => "apple-touch-icon"}/
 
-  %body
-    =yield
+		= stylesheet_link_tag    'front', media: 'all', 'data-turbolinks-track' => true
+		= csrf_meta_tags
 
-  = javascript_include_tag 'front', 'data-turbolinks-track' => true
+	%body
+		=yield
+
+	%script{:src => "https://api-maps.yandex.ru/2.1/?lang=ru_RU", :type => "text/javascript"}
+	= javascript_include_tag 'front', 'data-turbolinks-track' => true

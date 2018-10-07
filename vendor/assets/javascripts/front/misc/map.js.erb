@@ -1,0 +1,60 @@
+ymaps.ready(function () {
+
+    if ($('#map')[0] != undefined) {
+        var zoomDefault = 13;
+        var coord = {
+            lat: $('.js-map-data').data('lat'),
+            lng: $('.js-map-data').data('lng')
+        };
+        var disableUI = false;
+        var pin = '<%= asset_path 'pin.png' %>';
+
+        var windowWidth = $(window).width();
+
+        if ( windowWidth < 1024 ) {
+
+            if ( windowWidth < 768 ) {
+                zoomDefault = 15;
+            }
+        }
+
+
+        var myMap = new ymaps.Map('map', {
+                center: [coord.lat, coord.lng],
+                zoom: zoomDefault,
+                controls: ['zoomControl', 'typeSelector',  'fullscreenControl'],
+            }, {
+                searchControlProvider: 'yandex#search'
+            }),
+
+
+            myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                
+            }, {
+                /**
+                 * Options.
+                 * You must specify this type of layout.
+                 */
+                iconLayout: 'default#image',
+                // Custom image for the placemark icon.
+                iconImageHref: pin,
+                // The size of the placemark.
+                iconImageSize: [38, 56],
+                /**
+                 * The offset of the upper left corner of the icon relative
+                 * to its "tail" (the anchor point).
+                 */
+                iconImageOffset: [-19, -56]
+            });
+
+
+
+        myMap.geoObjects
+            .add(myPlacemark);
+
+        myMap.behaviors.disable('scrollZoom');
+
+    }
+
+
+});

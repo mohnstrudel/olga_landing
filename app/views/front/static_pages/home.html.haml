@@ -1,1 +1,1092 @@
-Макар, привет!
+/[if IE]
+  <p class="browserupgrade">
+  Вы используете <strong>старую версию</strong> браузера.
+  Пожалуйста <a href="http://browsehappy.com/">обновите ваш браузер</a>
+  перейдя по ссылке.
+  </p>
+/ page-container
+.page-container
+  %header.header.page-header
+    .header__wrp
+      .header__grid
+        %a.header__logo{:href => "/"}
+          %img{:alt => "WYS", :src => "#{asset_path 'logo.png'}"}/
+          %span.header__logo-bubble
+            %img{:alt => "bubble", :src => "#{asset_path 'logo_bubble.png' }"}/
+        .header__menu.js-menu
+          .header__menu-wrp
+            .header__menu-logo
+              %img{:alt => "WYS", :src => "#{asset_path 'logo.png' }"}/
+            .header__nav-wrp
+              %nav.header__nav.navigation.navigation_type_row
+                %ul.navigation__list
+                  %li.navigation__item
+                    %a.navigation__link.js-anchor-link{:href => "#about"}
+                      о лаборатории
+                  %li.navigation__item
+                    %a.navigation__link.js-anchor-link{:href => "#services"}
+                      косметология
+                  %li.navigation__item
+                    %a.navigation__link.js-anchor-link{:href => "#works"}
+                      фото работ
+                  %li.navigation__item
+                    %a.navigation__link.js-anchor-link{:href => "#team"}
+                      наша команда
+                  %li.navigation__item
+                    %a.navigation__link.js-anchor-link{:href => "#reviews"}
+                      отзывы
+                  %li.navigation__item
+                    %a.navigation__link.js-anchor-link{:href => "#news"}
+                      новости
+                  %li.navigation__item
+                    %a.navigation__link.js-anchor-link{:href => "#vacancies"}
+                      вакансии
+                  %li.navigation__item
+                    %a.navigation__link.js-anchor-link{:href => "#contacts"}
+                      контакты
+        %a.header__toggle.js-menu-toggle{:href => "javascript:void(0);"}
+          %span.header__toggle-line
+  / page-content
+  %main.page-content
+    .feedback.feedback_fixed.js-feedback
+      %a.feedback__link.button.button_circle.js-feedback-link.js-feedback-circle{:href => "#form-online"}
+        %span.button__text
+          Онлайн
+          %br>/
+          запись
+      #form-online.feedback__form.feedback__form_right.js-feedback-form
+        .feedback__success.js-feedback-success
+          .feedback__logo
+            %img{:alt => "WYS", :src => "#{asset_path 'logo.png' }"}/
+          .feedback__heading.caption.caption_size_xs
+            Спасибо, наш специалист свяжется
+            = succeed "\u{441}\u{a0}\u{432}\u{430}\u{43c}\u{438}" do
+              %br/
+          %button.feedback__close.button.button_theme_white.button_size_form.js-feedback-close
+            Закрыть
+        %form.feedback__form-data.form-data.js-form-feedback{:action => "#"}
+          .feedback__heading.caption.caption_size_xs
+            Укажите, пожалуйста, свои контактные данные, чтобы наш специалист смог связаться с вами для подтверждения записи
+          .feedback__logo
+            %img{:alt => "WYS", :src => "#{asset_path 'logo.png' }"}/
+          .form-data__parametr
+            %input.form-data__input{"data-required" => "", :name => "online-name", :placeholder => "* Имя", :type => "text"}/
+          .form-data__parametr
+            %input.form-data__input{"data-required" => "", :name => "online-surname", :placeholder => "* Фамилия", :type => "text"}/
+          .form-data__parametr
+            %input.form-data__input.js-phone-mask{"data-phone" => "", :name => "online-phone", :placeholder => "* Номер телефона", :type => "text"}/
+          .form-data__parametr
+            %input.form-data__input{"data-required" => "", :name => "online-procedure", :placeholder => "* Желаемая процедура", :type => "text"}/
+          .form-data__parametr
+            %input.form-data__input.js-date-mask{"data-required" => "", :name => "online-date", :placeholder => "* Выбрать дату (дд.мм.гг)", :type => "text"}/
+          .form-data__parametr.form-data__parametr_privacy
+            .form-data__checkbox.checkbox
+              %label.checkbox__label
+                %input.checkbox__input{"data-check" => "", :name => "online-privacy", :type => "checkbox"}/
+                %span.checkbox__check
+                %span.checkbox__caption
+                  согласие на обработку персональных данных
+          .form-data__parametr.form-data__parametr_submit
+            %button.form-data__submit.button.button_theme_white.button_size_form{:type => "submit"}
+              Записаться
+          .feedback__hint.caption
+            * после отправки формы наш специалист свяжется с вами, чтобы подобрать наиболее удобное для вас время, и подтвердить запись.
+    %section#promo.section.promo.scene
+      .promo__bg
+        %span.promo__bg-scroll.js-drops
+        .promo__bg-wrp
+          %img.promo__bg-drops.promo__bg-drops_type_1.layer{:alt => "drops_1", "data-depth" => "0.60", :src => "#{asset_path 'promo/drops_1.png' }"}/
+          %img.promo__bg-drops.promo__bg-drops_type_2.layer{:alt => "drops_2", "data-depth" => "0.70", :src => "#{asset_path 'promo/drops_2.png' }"}/
+          %img.promo__bg-drops.promo__bg-drops_type_3.layer{:alt => "drops_3", "data-depth" => "0.50", :src => "#{asset_path 'promo/drops_3.png' }"}/
+          .promo__bg-girl.layer{"data-depth" => "0.30"}
+            %img{:alt => "girl", :src => "#{asset_path 'promo/girl.png' }"}/
+          .promo__bg-sign.layer{"data-depth" => "0.10"}
+            %img{:alt => "sign", :src => "#{asset_path 'promo/sign.png' }"}/
+      .promo__wrp
+        .promo__content
+          .promo__contact
+            .promo__contact-items
+              %a.promo__contact-item.promo__contact-item_phone{:href => "tel:+7 (926) 321-76-54"} +7 (926) 321-76-54
+              %a.promo__contact-item.promo__contact-item_whatsapp{:href => "https://api.whatsapp.com/send?phone=79677653214", :rel => "nofollow"} +7 (967) 765-32-14
+            .promo__contact-items
+              %a.promo__contact-item.promo__contact-item_inst{:href => "https://www.instagram.com/wowyoushine", :rel => "nofollow", :target => "_blank"} @wowyoushine
+            %a.promo__contact-item.promo__contact-item_pin.js-anchor-link{:href => "#contacts"}
+              г. Москва
+              %br/
+              м. Выставочная
+              %br/
+              = succeed "," do
+                %nobr Афимол-Сити
+          .promo__feedback
+            .promo__feedback-item.feedback.js-feedback
+              %a.feedback__link.button.button_bubble.js-feedback-link{:href => "#form-consult"}
+                %span.button__text
+                  Бесплатная
+                  %br>/
+                  консультация
+                  %br>/
+                  косметолога
+              #form-consult.feedback__form.feedback__form_left.js-feedback-form
+                .feedback__success.js-feedback-success
+                  .feedback__logo
+                    %img{:alt => "WYS", :src => "#{asset_path 'logo.png' }"}/
+                  .feedback__heading.caption.caption_size_xs
+                    Спасибо, наш специалист свяжется
+                    = succeed "\u{441}\u{a0}\u{432}\u{430}\u{43c}\u{438}" do
+                      %br/
+                  %button.feedback__close.button.button_theme_white.button_size_form.js-feedback-close
+                    Закрыть
+                %form.feedback__form-data.form-data.js-form-feedback{:action => "#"}
+                  .feedback__heading.caption.caption_size_xs
+                    Укажите, пожалуйста, свои контактные данные, чтобы наш специалист смог связаться с вами для предоставления консультации
+                  .feedback__logo
+                    %img{:alt => "WYS", :src => "#{asset_path 'logo.png' }"}/
+                  .form-data__parametr
+                    %input.form-data__input{"data-required" => "", :name => "consult-name", :placeholder => "* Имя", :type => "text"}/
+                  .form-data__parametr
+                    %input.form-data__input{"data-required" => "", :name => "consult-surname", :placeholder => "* Фамилия", :type => "text"}/
+                  .form-data__parametr
+                    %input.form-data__input.js-phone-mask{"data-phone" => "", :name => "consult-phone", :placeholder => "* Номер телефона", :type => "text"}/
+                  .form-data__parametr
+                    %textarea.form-data__textarea{"data-required" => "", :name => "consult-text", :placeholder => "* ВАШ ВОПРОС"}
+                  .form-data__parametr.form-data__parametr_privacy
+                    .form-data__checkbox.checkbox
+                      %label.checkbox__label
+                        %input.checkbox__input{"data-check" => "", :name => "consult-privacy", :type => "checkbox"}/
+                        %span.checkbox__check
+                        %span.checkbox__caption
+                          согласие на обработку персональных данных
+                  .form-data__parametr.form-data__parametr_submit
+                    %button.form-data__submit.button.button_theme_white.button_size_form{:type => "submit"}
+                      Отправить
+    %section#about.section.about.scene.scene_min
+      %span.about__bg.layer{"data-depth" => "0.60"}
+      .section__wrp.about__wrp
+        .section__header.about__header
+          .section__heading.section__heading_stone.about__heading.heading.heading_type_h3
+            О лаборатории
+        .section__body.about__body
+          .about__gallery-wrp
+            .about__gallery.js-gallery.js-slider-about
+              .about__gallery-list
+                %a.about__gallery-item.js-gallery-item{"data-fancybox" => "about_gallery", :href => "images/about/1.jpg"}
+                  %img.js-fit{:src => "#{asset_path 'about/1.jpg' }"}/
+                %a.about__gallery-item.js-gallery-item{"data-fancybox" => "about_gallery", :href => "images/about/2.jpg"}
+                  %img.js-fit{:src => "#{asset_path 'about/2.jpg' }"}/
+                %a.about__gallery-item.js-gallery-item{"data-fancybox" => "about_gallery", :href => "images/about/3.jpg"}
+                  %img.js-fit{:src => "#{asset_path 'about/3.jpg' }"}/
+            .about__gallery-arrow.about__gallery-arrow_prev.js-slider-about-prev
+              %span.icon.icon-arrow-left
+            .about__gallery-arrow.about__gallery-arrow_next.js-slider-about-next
+              %span.icon.icon-arrow-right
+          .about__article.article.article_font_l
+            %p Концепция бренда Keep Looking берет свое начало от игры слов «keep» — продолжай, сохраняй и «look» — образ, взгляд. Дословно это выражение можно перевести, как продолжай искать…
+            %p ГАРМОНИЮ МЕЖДУ СВОЕЙ ИСТИННОЙ ВНУТРЕННЕЙ КРАСОТОЙ И ВНЕШНИМ ОБРАЗОМ
+            %p Наши мастера подобно гениальным художникам ищут свое вдохновение в подлинной женской красоте, работая над каждым образом, словно над изящным произведением классического искусства, чувствуя вашу индивидуальность, неповторимый характер и неуловимое настроение.
+    %section#services.section.section_top-stone.services.scene.scene_horizontal
+      .services__bg
+        .services__drops.services__drops_type_1.layer{"data-depth" => "0.50"}
+          %img{:alt => "drops_1", :src => "#{asset_path 'services/drops.png' }"}/
+        .services__drops.services__drops_type_2.layer{"data-depth" => "0.30"}
+          %img{:alt => "drops_2", :src => "#{asset_path 'services/drops.png' }"}/
+      .section__wrp.services__wrp
+        .section__header.services__header
+          .section__heading.services__heading.heading.heading_type_h3
+            Косметология
+        .section__body.services__body
+          .services__list-wrp
+            .services__list
+              .services__item.service.js-service
+                %a.service__toggle.js-service-toggle{:href => "javascript:void(0);", :title => "Подробнее"}
+                .service__bg
+                  %img.js-fit{:alt => "1", :src => "#{asset_path 'services/1.jpg' }"}/
+                .service__content
+                  .service__time
+                    60 мин.
+                  .service__content-box
+                    .service__title.heading.heading_type_h2
+                      Механическая чистка лица
+                    .service__content-row
+                      .service__more
+                        подробнее…
+                      .service__price
+                        4 990 руб.
+                .service__info
+                  .service__info-box
+                    .service__info-title.heading
+                      Механическая чистка лица
+                    .service__info-caption.caption
+                      Описание процедуры. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем, превосходной репутацией, но и раскрыть главную тайну особенного успеха KEEP LOOKING. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем.
+                  .service__info-row
+                    .service__time
+                      60 мин.
+                    .service__price
+                      4 990 руб.
+              .services__item.service.js-service
+                %a.service__toggle.js-service-toggle{:href => "javascript:void(0);", :title => "Подробнее"}
+                .service__bg
+                  %img.js-fit{:alt => "2", :src => "#{asset_path 'services/2.jpg' }"}/
+                .service__content
+                  .service__time
+                    60 мин.
+                  .service__content-box
+                    .service__title.heading.heading_type_h2
+                      Механическая чистка лица
+                    .service__content-row
+                      .service__more
+                        подробнее…
+                      .service__price
+                        4 990 руб.
+                .service__info
+                  .service__info-box
+                    .service__info-title.heading
+                      Механическая чистка лица
+                    .service__info-caption.caption
+                      Описание процедуры. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем, превосходной репутацией, но и раскрыть главную тайну особенного успеха KEEP LOOKING. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем.
+                  .service__info-row
+                    .service__time
+                      60 мин.
+                    .service__price
+                      4 990 руб.
+              .services__item.service.js-service
+                %a.service__toggle.js-service-toggle{:href => "javascript:void(0);", :title => "Подробнее"}
+                .service__bg
+                  %img.js-fit{:alt => "3", :src => "#{asset_path 'services/3.jpg' }"}/
+                .service__content
+                  .service__time
+                    60 мин.
+                  .service__content-box
+                    .service__title.heading.heading_type_h2
+                      Механическая чистка лица
+                    .service__content-row
+                      .service__more
+                        подробнее…
+                      .service__price
+                        4 990 руб.
+                .service__info
+                  .service__info-box
+                    .service__info-title.heading
+                      Механическая чистка лица
+                    .service__info-caption.caption
+                      Описание процедуры. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем, превосходной репутацией, но и раскрыть главную тайну особенного успеха KEEP LOOKING. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем.
+                  .service__info-row
+                    .service__time
+                      60 мин.
+                    .service__price
+                      4 990 руб.
+              .services__item.service.js-service
+                %a.service__toggle.js-service-toggle{:href => "javascript:void(0);", :title => "Подробнее"}
+                .service__bg
+                  %img.js-fit{:alt => "4", :src => "#{asset_path 'services/4.jpg' }"}/
+                .service__content
+                  .service__time
+                    60 мин.
+                  .service__content-box
+                    .service__title.heading.heading_type_h2
+                      Механическая чистка лица
+                    .service__content-row
+                      .service__more
+                        подробнее…
+                      .service__price
+                        4 990 руб.
+                .service__info
+                  .service__info-box
+                    .service__info-title.heading
+                      Механическая чистка лица
+                    .service__info-caption.caption
+                      Описание процедуры. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем, превосходной репутацией, но и раскрыть главную тайну особенного успеха KEEP LOOKING. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем.
+                  .service__info-row
+                    .service__time
+                      60 мин.
+                    .service__price
+                      4 990 руб.
+              .services__item.service.js-service
+                %a.service__toggle.js-service-toggle{:href => "javascript:void(0);", :title => "Подробнее"}
+                .service__bg
+                  %img.js-fit{:alt => "5", :src => "#{asset_path 'services/5.jpg' }"}/
+                .service__content
+                  .service__time
+                    60 мин.
+                  .service__content-box
+                    .service__title.heading.heading_type_h2
+                      Механическая чистка лица
+                    .service__content-row
+                      .service__more
+                        подробнее…
+                      .service__price
+                        4 990 руб.
+                .service__info
+                  .service__info-box
+                    .service__info-title.heading
+                      Механическая чистка лица
+                    .service__info-caption.caption
+                      Описание процедуры. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем, превосходной репутацией, но и раскрыть главную тайну особенного успеха KEEP LOOKING. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем.
+                  .service__info-row
+                    .service__time
+                      60 мин.
+                    .service__price
+                      4 990 руб.
+              .services__item.service.js-service
+                %a.service__toggle.js-service-toggle{:href => "javascript:void(0);", :title => "Подробнее"}
+                .service__bg
+                  %img.js-fit{:alt => "6", :src => "#{asset_path 'services/6.jpg' }"}/
+                .service__content
+                  .service__time
+                    60 мин.
+                  .service__content-box
+                    .service__title.heading.heading_type_h2
+                      Механическая чистка лица
+                    .service__content-row
+                      .service__more
+                        подробнее…
+                      .service__price
+                        4 990 руб.
+                .service__info
+                  .service__info-box
+                    .service__info-title.heading
+                      Механическая чистка лица
+                    .service__info-caption.caption
+                      Описание процедуры. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем, превосходной репутацией, но и раскрыть главную тайну особенного успеха KEEP LOOKING. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем.
+                  .service__info-row
+                    .service__time
+                      60 мин.
+                    .service__price
+                      4 990 руб.
+              .services__item.service.js-service
+                %a.service__toggle.js-service-toggle{:href => "javascript:void(0);", :title => "Подробнее"}
+                .service__bg
+                  %img.js-fit{:alt => "7", :src => "#{asset_path 'services/7.jpg' }"}/
+                .service__content
+                  .service__time
+                    60 мин.
+                  .service__content-box
+                    .service__title.heading.heading_type_h2
+                      Механическая чистка лица
+                    .service__content-row
+                      .service__more
+                        подробнее…
+                      .service__price
+                        4 990 руб.
+                .service__info
+                  .service__info-box
+                    .service__info-title.heading
+                      Механическая чистка лица
+                    .service__info-caption.caption
+                      Описание процедуры. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем, превосходной репутацией, но и раскрыть главную тайну особенного успеха KEEP LOOKING. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем.
+                  .service__info-row
+                    .service__time
+                      60 мин.
+                    .service__price
+                      4 990 руб.
+              .services__item.service.js-service
+                %a.service__toggle.js-service-toggle{:href => "javascript:void(0);", :title => "Подробнее"}
+                .service__bg
+                  %img.js-fit{:alt => "8", :src => "#{asset_path 'services/8.jpg' }"}/
+                .service__content
+                  .service__time
+                    60 мин.
+                  .service__content-box
+                    .service__title.heading.heading_type_h2
+                      Механическая чистка лица
+                    .service__content-row
+                      .service__more
+                        подробнее…
+                      .service__price
+                        4 990 руб.
+                .service__info
+                  .service__info-box
+                    .service__info-title.heading
+                      Механическая чистка лица
+                    .service__info-caption.caption
+                      Описание процедуры. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем, превосходной репутацией, но и раскрыть главную тайну особенного успеха KEEP LOOKING. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем.
+                  .service__info-row
+                    .service__time
+                      60 мин.
+                    .service__price
+                      4 990 руб.
+              .services__item.service.js-service
+                %a.service__toggle.js-service-toggle{:href => "javascript:void(0);", :title => "Подробнее"}
+                .service__bg
+                  %img.js-fit{:alt => "9", :src => "#{asset_path 'services/9.jpg' }"}/
+                .service__content
+                  .service__time
+                    60 мин.
+                  .service__content-box
+                    .service__title.heading.heading_type_h2
+                      Механическая чистка лица
+                    .service__content-row
+                      .service__more
+                        подробнее…
+                      .service__price
+                        4 990 руб.
+                .service__info
+                  .service__info-box
+                    .service__info-title.heading
+                      Механическая чистка лица
+                    .service__info-caption.caption
+                      Описание процедуры. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем, превосходной репутацией, но и раскрыть главную тайну особенного успеха KEEP LOOKING. На пути к общим целям мы готовы не только поделиться основными секретами нашей профессии, фирменным стилем.
+                  .service__info-row
+                    .service__time
+                      60 мин.
+                    .service__price
+                      4 990 руб.
+    %section#works.section.section_border.works.scene
+      .works__bg
+        %span.works__drops.layer{"data-depth" => "0.40"}
+        %span.works__rect.works__rect_type_1.layer{"data-depth" => "0.30"}
+          %span.works__rect-figure
+        %span.works__rect.works__rect_type_2.layer{"data-depth" => "0.70"}
+          %span.works__rect-figure
+      .section__wrp.works__wrp
+        .section__header.works__header
+          .section__heading.section__heading_stone.works__heading.heading.heading_type_h3
+            Фото работ
+        .section__body.works__body
+          .works__gallery.js-gallery
+            .works__gallery-list
+              .works__gallery-item
+                %a.works__gallery-link.js-gallery-item{"data-fancybox" => "works_gallery", :href => "images/services/1.jpg"}
+                  %span.works__gallery-img{:style => "background-image: url(#{ asset_path 'services/1.jpg' });"}
+              .works__gallery-item
+                %a.works__gallery-link.js-gallery-item{"data-fancybox" => "works_gallery", :href => "images/services/2.jpg"}
+                  %span.works__gallery-img{:style => "background-image: url(#{ asset_path 'services/2.jpg' });"}
+              .works__gallery-item
+                %a.works__gallery-link.js-gallery-item{"data-fancybox" => "works_gallery", :href => "images/services/3.jpg"}
+                  %span.works__gallery-img{:style => "background-image: url(#{ asset_path 'services/3.jpg' });"}
+              .works__gallery-item
+                %a.works__gallery-link.js-gallery-item{"data-fancybox" => "works_gallery", :href => "images/services/4.jpg"}
+                  %span.works__gallery-img{:style => "background-image: url(#{ asset_path 'services/4.jpg' });"}
+              .works__gallery-item
+                %a.works__gallery-link.js-gallery-item{"data-fancybox" => "works_gallery", :href => "images/services/5.jpg"}
+                  %span.works__gallery-img{:style => "background-image: url(#{ asset_path 'services/5.jpg' });"}
+              .works__gallery-item
+                %a.works__gallery-link.js-gallery-item{"data-fancybox" => "works_gallery", :href => "images/services/6.jpg"}
+                  %span.works__gallery-img{:style => "background-image: url(#{ asset_path 'services/6.jpg' });"}
+              .works__gallery-item
+                %a.works__gallery-link.js-gallery-item{"data-fancybox" => "works_gallery", :href => "images/services/7.jpg"}
+                  %span.works__gallery-img{:style => "background-image: url(#{ asset_path 'services/7.jpg' });"}
+              .works__gallery-item
+                %a.works__gallery-link.js-gallery-item{"data-fancybox" => "works_gallery", :href => "images/services/8.jpg"}
+                  %span.works__gallery-img{:style => "background-image: url(#{ asset_path 'services/8.jpg' });"}
+              .works__gallery-item
+                %a.works__gallery-link.js-gallery-item{"data-fancybox" => "works_gallery", :href => "images/services/9.jpg"}
+                  %span.works__gallery-img{:style => "background-image: url(#{ asset_path 'services/9.jpg' });"}
+            .works__gallery-footer
+              %a.works__gallery-more.button.button_theme_white.button_size_g.js-gallery-more{"data-start" => "6", :href => "javascript:void(0);"}
+                %span.button__text смотреть больше фото
+    %section#reviews.section.reviews.scene.scene_vertical
+      .reviews__bg
+        %img.reviews__bg-drops.layer{:alt => "drops", "data-depth" => "0.40", :src => "#{asset_path 'reviews/drops.png' }"}/
+      .section__wrp.reviews__wrp
+        .section__header.reviews__header
+          .section__heading.reviews__heading.heading.heading_type_h3
+            Отзывы
+        .section__body.reviews__body
+          .reviews__slider-wrp
+            .reviews__slider.swiper-container.js-slider-reviews
+              .reviews__slider-wrapper.swiper-wrapper
+                .reviews__slide.swiper-slide
+                  .reviews__slide-wrp
+                    .reviews__slide-top
+                      .reviews__star
+                        %span.reviews__star-item
+                        %span.reviews__star-item
+                        %span.reviews__star-item
+                        %span.reviews__star-item
+                        %span.reviews__star-item
+                      .reviews__caption.caption.caption_size_m
+                        В лаборатории представлены все виды косметологических чисток. В штате — только высокопрофессиональные косметологи, со стажем работы не менее 3х лет.
+                    .reviews__slide-bottom
+                      .reviews__profile
+                        %span.reviews__profile-img{:style => "background-image: url(#{ asset_path 'reviews/1.jpg' });"}
+                        .reviews__profile-caption.heading.heading_type_h6
+                          Мария, 28 лет, Москва
+                .reviews__slide.swiper-slide
+                  .reviews__slide-wrp
+                    .reviews__slide-top
+                      .reviews__star
+                        %span.reviews__star-item
+                        %span.reviews__star-item
+                        %span.reviews__star-item
+                      .reviews__caption.caption.caption_size_m
+                        В лаборатории представлены все виды косметологических чисток. В штате — только высокопрофессиональные косметологи, со стажем работы не менее 3х лет.
+                    .reviews__slide-bottom
+                      .reviews__profile
+                        %span.reviews__profile-img{:style => "background-image: url(#{ asset_path 'reviews/1.jpg' });"}
+                        .reviews__profile-caption.heading.heading_type_h6
+                          Мария, 28 лет, Москва
+                .reviews__slide.swiper-slide
+                  .reviews__slide-wrp
+                    .reviews__slide-top
+                      .reviews__star
+                        %span.reviews__star-item
+                        %span.reviews__star-item
+                        %span.reviews__star-item
+                        %span.reviews__star-item
+                      .reviews__caption.caption.caption_size_m
+                        В лаборатории представлены все виды косметологических чисток. В штате — только высокопрофессиональные косметологи, со стажем работы не менее 3х лет.
+                    .reviews__slide-bottom
+                      .reviews__profile
+                        %span.reviews__profile-img{:style => "background-image: url(#{ asset_path 'reviews/1.jpg' });"}
+                        .reviews__profile-caption.heading.heading_type_h6
+                          Мария, 28 лет, Москва
+                .reviews__slide.swiper-slide
+                  .reviews__slide-wrp
+                    .reviews__slide-top
+                      .reviews__star
+                        %span.reviews__star-item
+                        %span.reviews__star-item
+                        %span.reviews__star-item
+                        %span.reviews__star-item
+                        %span.reviews__star-item
+                      .reviews__caption.caption.caption_size_m
+                        В лаборатории представлены все виды косметологических чисток. В штате — только высокопрофессиональные косметологи, со стажем работы не менее 3х лет.
+                    .reviews__slide-bottom
+                      .reviews__profile
+                        %span.reviews__profile-img{:style => "background-image: url(#{ asset_path 'reviews/1.jpg' });"}
+                        .reviews__profile-caption.heading.heading_type_h6
+                          Мария, 28 лет, Москва
+                .reviews__slide.swiper-slide
+                  .reviews__slide-wrp
+                    .reviews__slide-top
+                      .reviews__star
+                        %span.reviews__star-item
+                        %span.reviews__star-item
+                        %span.reviews__star-item
+                        %span.reviews__star-item
+                      .reviews__caption.caption.caption_size_m
+                        В лаборатории представлены все виды косметологических чисток. В штате — только высокопрофессиональные косметологи, со стажем работы не менее 3х лет.
+                    .reviews__slide-bottom
+                      .reviews__profile
+                        %span.reviews__profile-img{:style => "background-image: url(#{ asset_path 'reviews/1.jpg' });"}
+                        .reviews__profile-caption.heading.heading_type_h6
+                          Мария, 28 лет, Москва
+            .reviews__arrow.reviews__arrow_prev.js-slider-reviews-prev
+              %span.icon.icon-arrow-left
+            .reviews__arrow.reviews__arrow_next.js-slider-reviews-next
+              %span.icon.icon-arrow-right
+    %section#news.section.section_bot-stone.news.scene
+      .section__wrp.news__wrp
+        .section__header.news__header
+          .section__heading.section__heading_stone.news__heading.heading.heading_type_h3
+            Новости
+        .section__body.news__body
+          .news__slider-wrp
+            .news__slider.swiper-container.js-slider-news
+              .news__slider-wrapper.swiper-wrapper
+                .news__slide.swiper-slide
+                  .news__slide-wrp
+                    .news__slide-img
+                      .news__img-wrp
+                        %span.news__img{:style => "background-image: url(#{ asset_path 'news/1.jpg' });"}
+                    .news__slide-text
+                      .news__date.caption.caption_size_m
+                        12.09.2018
+                      .news__title.heading.heading_type_h3
+                        название новости
+                      .news__caption.caption.caption_size_g
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                        %br/
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                .news__slide.swiper-slide
+                  .news__slide-wrp
+                    .news__slide-img
+                      .news__img-wrp
+                        %span.news__img{:style => "background-image: url(#{ asset_path 'news/1.jpg' });"}
+                    .news__slide-text
+                      .news__date.caption.caption_size_m
+                        12.09.2018
+                      .news__title.heading.heading_type_h3
+                        название новости
+                      .news__caption.caption.caption_size_g
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                        %br/
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                .news__slide.swiper-slide
+                  .news__slide-wrp
+                    .news__slide-img
+                      .news__img-wrp
+                        %span.news__img{:style => "background-image: url(#{ asset_path 'news/1.jpg' });"}
+                    .news__slide-text
+                      .news__date.caption.caption_size_m
+                        12.09.2018
+                      .news__title.heading.heading_type_h3
+                        название новости
+                      .news__caption.caption.caption_size_g
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                        %br/
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                .news__slide.swiper-slide
+                  .news__slide-wrp
+                    .news__slide-img
+                      .news__img-wrp
+                        %span.news__img{:style => "background-image: url(#{ asset_path 'news/1.jpg' });"}
+                    .news__slide-text
+                      .news__date.caption.caption_size_m
+                        12.09.2018
+                      .news__title.heading.heading_type_h3
+                        название новости
+                      .news__caption.caption.caption_size_g
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                        %br/
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                .news__slide.swiper-slide
+                  .news__slide-wrp
+                    .news__slide-img
+                      .news__img-wrp
+                        %span.news__img{:style => "background-image: url(#{ asset_path 'news/1.jpg' });"}
+                    .news__slide-text
+                      .news__date.caption.caption_size_m
+                        12.09.2018
+                      .news__title.heading.heading_type_h3
+                        название новости
+                      .news__caption.caption.caption_size_g
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                        %br/
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                .news__slide.swiper-slide
+                  .news__slide-wrp
+                    .news__slide-img
+                      .news__img-wrp
+                        %span.news__img{:style => "background-image: url(#{ asset_path 'news/1.jpg' });"}
+                    .news__slide-text
+                      .news__date.caption.caption_size_m
+                        12.09.2018
+                      .news__title.heading.heading_type_h3
+                        название новости
+                      .news__caption.caption.caption_size_g
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                        %br/
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                .news__slide.swiper-slide
+                  .news__slide-wrp
+                    .news__slide-img
+                      .news__img-wrp
+                        %span.news__img{:style => "background-image: url(#{ asset_path 'news/1.jpg' });"}
+                    .news__slide-text
+                      .news__date.caption.caption_size_m
+                        12.09.2018
+                      .news__title.heading.heading_type_h3
+                        название новости
+                      .news__caption.caption.caption_size_g
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                        %br/
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                .news__slide.swiper-slide
+                  .news__slide-wrp
+                    .news__slide-img
+                      .news__img-wrp
+                        %span.news__img{:style => "background-image: url(#{ asset_path 'news/1.jpg' });"}
+                    .news__slide-text
+                      .news__date.caption.caption_size_m
+                        12.09.2018
+                      .news__title.heading.heading_type_h3
+                        название новости
+                      .news__caption.caption.caption_size_g
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                        %br/
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                .news__slide.swiper-slide
+                  .news__slide-wrp
+                    .news__slide-img
+                      .news__img-wrp
+                        %span.news__img{:style => "background-image: url(#{ asset_path 'news/1.jpg' });"}
+                    .news__slide-text
+                      .news__date.caption.caption_size_m
+                        12.09.2018
+                      .news__title.heading.heading_type_h3
+                        название новости
+                      .news__caption.caption.caption_size_g
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                        %br/
+                        Описание новости, рассказ о 
+                        %nobr> чем-то
+                        \. Например, о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+              .news__slider-nav
+                .news__arrow.news__arrow_prev.js-slider-news-prev
+                  %span.icon.icon-arrow-d-left
+                .news__pagination.js-slider-news-pagination
+                .news__arrow.news__arrow_next.js-slider-news-next
+                  %span.icon.icon-arrow-d-right
+          .news__main
+            .news__main-grid
+              .news__main-text
+                .news__main-title.heading.heading_type_h1
+                  название самой важной новости или акции
+                .news__main-caption.caption.caption_size_l
+                  Описание новости, рассказ о 
+                  %nobr> чем-то
+                  \.
+                  = succeed "." do
+                    %strong Например, о новом оборудовании, которое куплено
+                  %br/
+                  Описание новости, рассказ о 
+                  %nobr> чем-то
+                  \. Скидка на процедуру, если привести подругу —
+                  %span
+                    %strong 15%
+                  о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+                .news__main-btn-wrp
+                  %a.news__main-btn.button.button_theme_white.button_size_g.js-feedback-link.js-feedback{:href => "#form-online"}
+                    %span.button__text хочу Записаться!
+              .news__main-img-wrp
+                %span.news__main-drops.layer{"data-depth" => "0.40"}
+                  %img{:alt => "main_bg", :src => "#{asset_path 'news/main_bg.png' }"}/
+                %span.news__main-img
+                  %img{:alt => "main", :src => "#{asset_path 'news/main.png' }"}/
+    %section#team.section.team.scene
+      .team__bg
+        %span.team__bg-scroll.js-drops
+        %img.team__bg-img.team__bg-img_type_1.layer{:alt => "img_1", "data-depth" => "0.30", :src => "#{asset_path 'team/img_1.png' }"}/
+        %img.team__bg-img.team__bg-img_type_2.layer{:alt => "img_2", "data-depth" => "0.40", :src => "#{asset_path 'team/img_2.png' }"}/
+      .section__wrp.team__wrp
+        .section__header.team__header
+          .section__heading.team__heading.heading.heading_type_h3
+            Наша команда
+        .section__body.team__body
+          .team__list-wrp
+            .team__list
+              .team__item
+                .team__item-wrp
+                  .team__img-wrp
+                    .team__photo-wrp
+                      %span.team__photo{:style => "background-image: url(#{ asset_path 'team/1.jpg' });"}
+                  .team__text
+                    .team__title.heading.heading_type_h3
+                      ОЛЬГА КЛИНИЦКАЯ
+                    .team__position.heading.heading_type_h4
+                      должность
+                    .team__caption
+                      Описание навыков, что делает сотрудник, перечень курсов, которые прошел, какие есть дипломы и квалификации…
+                      %br/
+                      Описание навыков, что делает сотрудник, перечень курсов, которые прошел, какие есть дипломы и квалификации…
+                    .team__exp
+                      Опыт работы сколько лет
+              .team__item
+                .team__item-wrp
+                  .team__img-wrp
+                    .team__photo-wrp
+                      %span.team__photo{:style => "background-image: url(#{ asset_path 'team/1.jpg' });"}
+                  .team__text
+                    .team__title.heading.heading_type_h3
+                      ОЛЬГА КЛИНИЦКАЯ
+                    .team__position.heading.heading_type_h4
+                      должность
+                    .team__caption
+                      Описание навыков, что делает сотрудник, перечень курсов, которые прошел, какие есть дипломы и квалификации…
+                      %br/
+                      Описание навыков, что делает сотрудник, перечень курсов, которые прошел, какие есть дипломы и квалификации…
+                    .team__exp
+                      Опыт работы сколько лет
+              .team__item
+                .team__item-wrp
+                  .team__img-wrp
+                    .team__photo-wrp
+                      %span.team__photo{:style => "background-image: url(#{ asset_path 'team/1.jpg' });"}
+                  .team__text
+                    .team__title.heading.heading_type_h3
+                      ОЛЬГА КЛИНИЦКАЯ
+                    .team__position.heading.heading_type_h4
+                      должность
+                    .team__caption
+                      Описание навыков, что делает сотрудник, перечень курсов, которые прошел, какие есть дипломы и квалификации…
+                      %br/
+                      Описание навыков, что делает сотрудник, перечень курсов, которые прошел, какие есть дипломы и квалификации…
+                    .team__exp
+                      Опыт работы сколько лет
+              .team__item
+                .team__item-wrp
+                  .team__img-wrp
+                    .team__photo-wrp
+                      %span.team__photo{:style => "background-image: url(#{ asset_path 'team/1.jpg' });"}
+                  .team__text
+                    .team__title.heading.heading_type_h3
+                      ОЛЬГА КЛИНИЦКАЯ
+                    .team__position.heading.heading_type_h4
+                      должность
+                    .team__caption
+                      Описание навыков, что делает сотрудник, перечень курсов, которые прошел, какие есть дипломы и квалификации…
+                      %br/
+                      Описание навыков, что делает сотрудник, перечень курсов, которые прошел, какие есть дипломы и квалификации…
+                    .team__exp
+                      Опыт работы сколько лет
+              .team__item
+                .team__item-wrp
+                  .team__img-wrp
+                    .team__photo-wrp
+                      %span.team__photo{:style => "background-image: url(#{ asset_path 'team/1.jpg' });"}
+                  .team__text
+                    .team__title.heading.heading_type_h3
+                      ОЛЬГА КЛИНИЦКАЯ
+                    .team__position.heading.heading_type_h4
+                      должность
+                    .team__caption
+                      Описание навыков, что делает сотрудник, перечень курсов, которые прошел, какие есть дипломы и квалификации…
+                      %br/
+                      Описание навыков, что делает сотрудник, перечень курсов, которые прошел, какие есть дипломы и квалификации…
+                    .team__exp
+                      Опыт работы сколько лет
+              .team__item
+                .team__item-wrp
+                  .team__img-wrp
+                    .team__photo-wrp
+                      %span.team__photo{:style => "background-image: url(#{ asset_path 'team/1.jpg' });"}
+                  .team__text
+                    .team__title.heading.heading_type_h3
+                      ОЛЬГА КЛИНИЦКАЯ
+                    .team__position.heading.heading_type_h4
+                      должность
+                    .team__caption
+                      Описание навыков, что делает сотрудник, перечень курсов, которые прошел, какие есть дипломы и квалификации…
+                      %br/
+                      Описание навыков, что делает сотрудник, перечень курсов, которые прошел, какие есть дипломы и квалификации…
+                    .team__exp
+                      Опыт работы сколько лет
+    %section#vacancies.section.vacancies.scene
+      .vacancies__bg
+        %img.vacancies__bg-water.layer{:alt => "water", "data-depth" => "0.40", :src => "#{asset_path 'vacancies/bg_water.jpg' }"}/
+        %img.vacancies__bg-girl{:alt => "girl", :src => "#{asset_path 'vacancies/girl.png' }"}/
+      .section__wrp.vacancies__wrp
+        .section__header.vacancies__header
+          .section__heading.section__heading_stone.vacancies__heading.heading.heading_type_h3
+            Вакансии
+        .section__body.vacancies__body
+          .vacancies__slider-wrp
+            .vacancies__slider.swiper-container.js-slider-vacancies
+              .vacancies__slider-wrapper.swiper-wrapper
+                .vacancies__slide.swiper-slide
+                  .vacancies__slide-wrp
+                    .vacancies__icon
+                      %span.icon.icon-vacancy
+                    .vacancies__text
+                      .vacancies__title.heading.heading_type_h3
+                        врач-косметолог
+                      .vacancies__article.article
+                        %p
+                          %strong Требования:
+                          %br/
+                          — описание требований к требуемой должности;
+                          %br/
+                          — описание требований к требуемой должности;
+                          %br/
+                          — описание требований к требуемой должности.
+                        %p
+                          %strong Что мы предлагаем:
+                          работу в дружном коллективе, условия труда, описание…
+                        %p
+                          %nobr> Е-mail
+                          \:
+                          %a{:href => "mailto:irkhair@mail.ru"} irkhair@mail.ru
+                .vacancies__slide.swiper-slide
+                  .vacancies__slide-wrp
+                    .vacancies__icon
+                      %span.icon.icon-vacancy
+                    .vacancies__text
+                      .vacancies__title.heading.heading_type_h3
+                        Администратор
+                      .vacancies__article.article
+                        %p
+                          %strong Требования:
+                          %br/
+                          — описание требований к требуемой должности;
+                          %br/
+                          — описание требований к требуемой должности;
+                          %br/
+                          — описание требований к требуемой должности.
+                        %p
+                          %strong Что мы предлагаем:
+                          работу в дружном коллективе, условия труда, описание…
+                        %p
+                          %nobr> Е-mail
+                          \:
+                          %a{:href => "mailto:irkhair@mail.ru"} irkhair@mail.ru
+                .vacancies__slide.swiper-slide
+                  .vacancies__slide-wrp
+                    .vacancies__icon
+                      %span.icon.icon-vacancy
+                    .vacancies__text
+                      .vacancies__title.heading.heading_type_h3
+                        врач-косметолог
+                      .vacancies__article.article
+                        %p
+                          %strong Требования:
+                          %br/
+                          — описание требований к требуемой должности;
+                          %br/
+                          — описание требований к требуемой должности;
+                          %br/
+                          — описание требований к требуемой должности.
+                        %p
+                          %strong Что мы предлагаем:
+                          работу в дружном коллективе, условия труда, описание…
+                        %p
+                          %nobr> Е-mail
+                          \:
+                          %a{:href => "mailto:irkhair@mail.ru"} irkhair@mail.ru
+                .vacancies__slide.swiper-slide
+                  .vacancies__slide-wrp
+                    .vacancies__icon
+                      %span.icon.icon-vacancy
+                    .vacancies__text
+                      .vacancies__title.heading.heading_type_h3
+                        Администратор
+                      .vacancies__article.article
+                        %p
+                          %strong Требования:
+                          %br/
+                          — описание требований к требуемой должности;
+                          %br/
+                          — описание требований к требуемой должности;
+                          %br/
+                          — описание требований к требуемой должности.
+                        %p
+                          %strong Что мы предлагаем:
+                          работу в дружном коллективе, условия труда, описание…
+                        %p
+                          %nobr> Е-mail
+                          \:
+                          %a{:href => "mailto:irkhair@mail.ru"} irkhair@mail.ru
+            .vacancies__arrow.vacancies__arrow_prev.js-slider-vacancies-prev
+              %span.icon.icon-arrow-left
+            .vacancies__arrow.vacancies__arrow_next.js-slider-vacancies-next
+              %span.icon.icon-arrow-right
+    %section#contacts.section.contacts
+      .section__wrp.contacts__wrp
+        .section__header.contacts__header
+          .section__heading.section__heading_stone.contacts__heading.heading.heading_type_h3
+            Контакты
+        .section__body.contacts__body
+          .contacts__grid
+            .contacts__grid-item.contacts__grid-item_map
+              .contacts__map.js-map-data{"data-lat" => "55.754002", "data-lng" => "37.635657"}
+                #map.contacts__map-frame
+            .contacts__grid-item.contacts__grid-item_text
+              .contacts__text
+                .contacts__text-item
+                  .contacts__text-title.heading.heading_type_h4
+                    МЫ НАХОДИМСЯ ПО АДРЕСУ:
+                  .contacts__text-caption.caption.caption_size_l
+                    г. Москва
+                    %br/
+                    ул. Название Улицы д.12
+                    %br/
+                    %strong ТЦ «НАЗВАНИЕ» 2 этаж
+                .contacts__text-item
+                  .contacts__text-title.heading.heading_type_h4
+                    МЫ РАБОТАЕМ:
+                  .contacts__text-caption.caption.caption_size_l
+                    %strong
+                      %nobr пн-вс
+                      9.00–22.00
+                .contacts__text-item
+                  .contacts__text-title.heading.heading_type_h4
+                    ВЫ МОЖЕТЕ ПОЗВОНИТЬ НАМ:
+                  .contacts__text-caption.caption.caption_size_l
+                    %a{:href => "tel:+7 912 345-67-89"}
+                      %strong +7 912 345-67-89
+                    %br/
+                    %a{:href => "tel:+7 912 345-67-89"}
+                      %strong +7 912 345-67-89
+                .contacts__text-item
+                  .contacts__text-title.heading.heading_type_h4
+                    МЫ В СОЦСЕТЯХ:
+                  .contacts__social
+                    %a.contacts__social-item{:href => "javascript:void(0);", :rel => "nofollow", :target => "_blank"}
+                      %img{:alt => "inst", :src => "#{asset_path 'inst.svg' }"}/
+                    %a.contacts__social-item{:href => "javascript:void(0);", :rel => "nofollow", :target => "_blank"}
+                      %img{:alt => "fb", :src => "#{asset_path 'fb.svg' }"}/
+                    %a.contacts__social-item{:href => "javascript:void(0);", :rel => "nofollow", :target => "_blank"}
+                      %img{:alt => "vk", :src => "#{asset_path 'vk.svg' }"}/
+  / /page-content
+  %footer.footer.page-footer
+    .footer__wrp
+      .footer__grid
+        .footer__left
+          .footer__nav-wrp
+            %nav.footer__nav.navigation.navigation_type_column
+              %ul.navigation__list
+                %li.navigation__item
+                  %a.navigation__link.js-anchor-link{:href => "#promo"}
+                    Главная
+                %li.navigation__item
+                  %a.navigation__link.js-anchor-link{:href => "#about"}
+                    о лаборатории
+                %li.navigation__item
+                  %a.navigation__link.js-anchor-link{:href => "#services"}
+                    косметология
+                %li.navigation__item
+                  %a.navigation__link.js-anchor-link{:href => "#news"}
+                    новости
+                %li.navigation__item
+                  %a.navigation__link.js-anchor-link{:href => "#works"}
+                    фото работ
+              %ul.navigation__list
+                %li.navigation__item
+                  %a.navigation__link.js-anchor-link{:href => "#reviews"}
+                    отзывы
+                %li.navigation__item
+                  %a.navigation__link.js-anchor-link{:href => "#team"}
+                    наша команда
+                %li.navigation__item
+                  %a.navigation__link.js-anchor-link{:href => "#vacancies"}
+                    вакансии
+                %li.navigation__item
+                  %a.navigation__link.js-anchor-link{:href => "#contacts"}
+                    контакты
+          %a.footer__logo.js-anchor-link{:href => "#promo"}
+            %img{:alt => "WYS", :src => "#{asset_path 'logo.png' }"}/
+          .footer__phone
+            %a.footer__phone-item{:href => "tel:+7 912 345-67-89"} +7 912 345-67-89
+            %a.footer__phone-item{:href => "tel:+7 912 345-67-89"} +7 912 345-67-89
+        .footer__center
+          %a.footer__logo.js-anchor-link{:href => "#promo"}
+            %img{:alt => "WYS", :src => "#{asset_path 'logo.png' }"}/
+        .footer__right
+          .footer__copy
+            .footer__copy-heading.heading
+              2015–2018 © Студия
+              %nobr экспресс-маникюра
+              Лены Лениной
+              %br/
+              %a{:href => "javascript:void(0);"} Политика конфиденциальности
+            .footer__copy-caption.caption.caption_size_s
+              © «KOSMOS» косметология и салон красоты в Москве. Медицинская лицензия ЛО7701015749.
+              %br.md-hide/
+              ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ЗАБОТА», ИНН 7706451336, ОГРН 5177746121185.
+              %br.md-hide/
+              Все права защищены.
+/ /page-container
