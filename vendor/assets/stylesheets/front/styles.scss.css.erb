@@ -67,36 +67,38 @@ html {
 
 @font-face {
     font-family: 'Century Gothic';
-    src: local("Century Gothic"), local("CenturyGothic"), font-url('subset-CenturyGothic.woff2') format("woff2"), font-url('subset-CenturyGothic.woff') format("woff"), font-url('subset-CenturyGothic.ttf') format("truetype");
+    src: local("Century Gothic"), local("CenturyGothic"), url("<%= font_path('subset-CenturyGothic.woff2') %>") format("woff2"), url("<%= font_path('subset-CenturyGothic.woff') %>") format("woff"), url("<%= font_path('subset-CenturyGothic.ttf') %>") format("truetype");
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
     font-family: 'Century Gothic';
-    src: local("Century Gothic Bold"), local("CenturyGothic-Bold"), font-url('subset-CenturyGothic-Bold.woff2') format("woff2"), font-url('subset-CenturyGothic-Bold.woff') format("woff"), font-url('subset-CenturyGothic-Bold.ttf') format("truetype");
+    src: local("Century Gothic Bold"), local("CenturyGothic-Bold"), url("<%= font_path('subset-CenturyGothic-Bold.woff2') %>") format("woff2"), url("<%= font_path('subset-CenturyGothic-Bold.woff') %>") format("woff"), url("<%= font_path('subset-CenturyGothic-Bold.ttf') %>") format("truetype");
     font-weight: 700;
     font-style: normal
 }
 
 @font-face {
     font-family: Arial;
-    src: local("Arial"), local("ArialMT"), font-url('subset-ArialMT.woff2') format("woff2"), font-url('subset-ArialMT.woff') format("woff"), font-url('subset-ArialMT.ttf') format("truetype");
+    src: local("Arial"), local("ArialMT"), url("<%= font_path('subset-ArialMT.woff2') %>") format("woff2"), url("<%= font_path('subset-ArialMT.woff') %>") format("woff"), url("<%= font_path('subset-ArialMT.ttf') %>") format("truetype");
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
     font-family: Arial;
-    src: local("Arial Italic"), local("Arial-ItalicMT"), font-url('subset-Arial-ItalicMT.woff2') format("woff2"), font-url('subset-Arial-ItalicMT.woff') format("woff"), font-url('subset-Arial-ItalicMT.ttf') format("truetype");
+    src: local("Arial Italic"), local("Arial-ItalicMT"), url("<%= font_path('subset-Arial-ItalicMT.woff2') %>") format("woff2"), url("<%= font_path('subset-Arial-ItalicMT.woff') %>") format("woff"), url("<%= font_path('subset-Arial-ItalicMT.ttf') %>") format("truetype");
     font-weight: 400;
     font-style: italic
 }
 
 @font-face {
     font-family: wys;
-    src: font-url('wys.eot?byj042');
-    src: font-url('wys.eot?byj042#iefix') format("embedded-opentype"), font-url('wys.ttf?byj042') format("truetype"), font-url('wys.woff?byj042') format("woff"), font-url('wys.svg?byj042#wys') format("svg");
+    /*src: font-url('wys.eot?byj042');*/
+    /*src: font-url('wys.eot?byj042#iefix') format("embedded-opentype"), font-url('wys.ttf?byj042') format("truetype"), font-url('wys.woff?byj042') format("woff"), font-url('wys.svg?byj042#wys') format("svg");*/
+    src: url("<%= font_path('wys.eot?byj042') %>");
+    src: url("<%= font_path('wys.eot?byj042#iefix') %>") format("embedded-opentype"), url("<%= font_path('wys.ttf?byj042') %>") format("truetype"), url("<%= font_path ('wys.woff?byj042') %>") format("woff"), url("<%= font_path('wys.svg?byj042#wys') %>") format("svg");
     font-weight: 400;
     font-style: normal
 }
