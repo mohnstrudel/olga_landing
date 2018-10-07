@@ -1,0 +1,55 @@
+%section#news.section.section_bot-stone.news.scene
+  .section__wrp.news__wrp
+    .section__header.news__header
+      .section__heading.section__heading_stone.news__heading.heading.heading_type_h3
+        Новости
+    .section__body.news__body
+      .news__slider-wrp
+        .news__slider.swiper-container.js-slider-news
+          .news__slider-wrapper.swiper-wrapper
+            -@posts.each do |post|
+              .news__slide.swiper-slide
+                .news__slide-wrp
+                  .news__slide-img
+                    .news__img-wrp
+                      -if post.picture.present?
+                        %span.news__img{:style => "background-image: url(#{ asset_path post.picture.url });"}
+                  .news__slide-text
+                    .news__date.caption.caption_size_m
+                      =post.created_at.strftime("%d.%m.%Y")
+                    .news__title.heading.heading_type_h3
+                      =post.title
+                    .news__caption.caption.caption_size_g
+                      =post.body
+          .news__slider-nav
+            .news__arrow.news__arrow_prev.js-slider-news-prev
+              %span.icon.icon-arrow-d-left
+            .news__pagination.js-slider-news-pagination
+            .news__arrow.news__arrow_next.js-slider-news-next
+              %span.icon.icon-arrow-d-right
+      .news__main
+        .news__main-grid
+          .news__main-text
+            .news__main-title.heading.heading_type_h1
+              название самой важной новости или акции
+            .news__main-caption.caption.caption_size_l
+              Описание новости, рассказ о 
+              %nobr> чем-то
+              \.
+              = succeed "." do
+                %strong Например, о новом оборудовании, которое куплено
+              %br/
+              Описание новости, рассказ о 
+              %nobr> чем-то
+              \. Скидка на процедуру, если привести подругу —
+              %span
+                %strong 15%
+              о новом оборудовании, которое куплено. Или о новых процедурах, новых косметологах, возможно даже об акциях
+            .news__main-btn-wrp
+              %a.news__main-btn.button.button_theme_white.button_size_g.js-feedback-link.js-feedback{:href => "#form-online"}
+                %span.button__text хочу Записаться!
+          .news__main-img-wrp
+            %span.news__main-drops.layer{"data-depth" => "0.40"}
+              %img{:alt => "main_bg", :src => "#{asset_path 'news/main_bg.png' }"}/
+            %span.news__main-img
+              %img{:alt => "main", :src => "#{asset_path 'news/main.png' }"}/

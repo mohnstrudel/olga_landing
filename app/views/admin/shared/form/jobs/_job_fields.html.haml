@@ -4,3 +4,18 @@
     .col-lg-10
       =f.number_field :salary, class: "form-control"
   .hr-line-dashed
+
+-if object.respond_to?(:requirements)
+  .form-group
+    %label.col-lg-2.control-label Требования
+    .col-lg-10
+      =f.bootsy_area :requirements, class: "form-control"
+      %span.help-block.m-b-none Требования к кандидату
+  .hr-line-dashed
+
+-if object.respond_to?(:offerings)
+  .form-group
+    %label.col-lg-2.control-label Что мы предлагаем
+    .col-lg-10
+      =f.bootsy_area :offerings, class: "form-control"
+  .hr-line-dashed

@@ -1,0 +1,36 @@
+%section#vacancies.section.vacancies.scene
+  .vacancies__bg
+    %img.vacancies__bg-water.layer{:alt => "water", "data-depth" => "0.40", :src => "#{asset_path 'vacancies/bg_water.jpg' }"}/
+    %img.vacancies__bg-girl{:alt => "girl", :src => "#{asset_path 'vacancies/girl.png' }"}/
+  .section__wrp.vacancies__wrp
+    .section__header.vacancies__header
+      .section__heading.section__heading_stone.vacancies__heading.heading.heading_type_h3
+        Вакансии
+    .section__body.vacancies__body
+      .vacancies__slider-wrp
+        .vacancies__slider.swiper-container.js-slider-vacancies
+          .vacancies__slider-wrapper.swiper-wrapper
+            -@jobs.each do |job|
+              .vacancies__slide.swiper-slide
+                .vacancies__slide-wrp
+                  .vacancies__icon
+                    %span.icon.icon-vacancy
+                  .vacancies__text
+                    .vacancies__title.heading.heading_type_h3
+                      =job.title
+                    .vacancies__article.article
+                      =job.description
+                      %p
+                        %strong Требования:
+                        =job.requirements
+                      %p
+                        %strong Что мы предлагаем:
+                        =job.offerings
+                      %p
+                        %nobr> Е-mail
+                        \:
+                        %a{:href => "mailto:#{job.email}"}=job.email
+        .vacancies__arrow.vacancies__arrow_prev.js-slider-vacancies-prev
+          %span.icon.icon-arrow-left
+        .vacancies__arrow.vacancies__arrow_next.js-slider-vacancies-next
+          %span.icon.icon-arrow-right

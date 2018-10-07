@@ -1,0 +1,40 @@
+%section#services.section.section_top-stone.services.scene.scene_horizontal
+  .services__bg
+    .services__drops.services__drops_type_1.layer{"data-depth" => "0.50"}
+      %img{:alt => "drops_1", :src => "#{asset_path 'services/drops.png' }"}/
+    .services__drops.services__drops_type_2.layer{"data-depth" => "0.30"}
+      %img{:alt => "drops_2", :src => "#{asset_path 'services/drops.png' }"}/
+  .section__wrp.services__wrp
+    .section__header.services__header
+      .section__heading.services__heading.heading.heading_type_h3
+        Косметология
+    .section__body.services__body
+      .services__list-wrp
+        .services__list
+          -@services.each do |service|
+            .services__item.service.js-service
+              %a.service__toggle.js-service-toggle{:href => "javascript:void(0);", :title => "Подробнее"}
+              .service__bg
+                %img.js-fit{:alt => "1", :src => service.pictures.first}/
+              .service__content
+                .service__time
+                  ="#{service.duration.to_i} мин."
+                .service__content-box
+                  .service__title.heading.heading_type_h2
+                    =service.title
+                  .service__content-row
+                    .service__more
+                      подробнее…
+                    .service__price
+                      ="#{service.price.to_i} руб."
+              .service__info
+                .service__info-box
+                  .service__info-title.heading
+                    =service.title
+                  .service__info-caption.caption
+                    =service.description
+                .service__info-row
+                  .service__time
+                    ="#{service.duration.to_i} мин."
+                  .service__price
+                    ="#{service.price.to_i} руб."

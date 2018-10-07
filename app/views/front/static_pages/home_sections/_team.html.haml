@@ -1,0 +1,27 @@
+%section#team.section.team.scene
+  .team__bg
+    %span.team__bg-scroll.js-drops
+    %img.team__bg-img.team__bg-img_type_1.layer{:alt => "img_1", "data-depth" => "0.30", :src => "#{asset_path 'team/img_1.png' }"}/
+    %img.team__bg-img.team__bg-img_type_2.layer{:alt => "img_2", "data-depth" => "0.40", :src => "#{asset_path 'team/img_2.png' }"}/
+  .section__wrp.team__wrp
+    .section__header.team__header
+      .section__heading.team__heading.heading.heading_type_h3
+        Наша команда
+    .section__body.team__body
+      .team__list-wrp
+        .team__list
+          -@members.each do |member|
+            .team__item
+              .team__item-wrp
+                .team__img-wrp
+                  .team__photo-wrp
+                    %span.team__photo{:style => "background-image: url(#{ asset_path member.picture.url });"}
+                .team__text
+                  .team__title.heading.heading_type_h3
+                    =member.name
+                  .team__position.heading.heading_type_h4
+                    =member.position
+                  .team__caption
+                    =member.description
+                  .team__exp
+                    ="Опыт работы #{member.experience}."

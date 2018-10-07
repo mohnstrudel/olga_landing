@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_04_160704) do
+ActiveRecord::Schema.define(version: 2018_10_07_211926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,12 @@ ActiveRecord::Schema.define(version: 2018_09_04_160704) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
+  create_table "galleries", force: :cascade do |t|
+    t.string "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "jobs", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -34,6 +40,9 @@ ActiveRecord::Schema.define(version: 2018_09_04_160704) do
     t.float "salary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "requirements"
+    t.text "offerings"
+    t.string "email"
   end
 
   create_table "member_services", force: :cascade do |t|
@@ -51,6 +60,8 @@ ActiveRecord::Schema.define(version: 2018_09_04_160704) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "position"
+    t.string "experience"
   end
 
   create_table "post_categories", force: :cascade do |t|
@@ -88,6 +99,17 @@ ActiveRecord::Schema.define(version: 2018_09_04_160704) do
     t.index ["service_id"], name: "index_requests_on_service_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.string "description"
+    t.string "picture"
+    t.string "name"
+    t.string "age"
+    t.string "place"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "service_categories", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -107,6 +129,8 @@ ActiveRecord::Schema.define(version: 2018_09_04_160704) do
     t.bigint "service_category_id"
     t.string "slug"
     t.json "pictures"
+    t.float "price"
+    t.float "duration"
     t.index ["service_category_id"], name: "index_services_on_service_category_id"
     t.index ["slug"], name: "index_services_on_slug", unique: true
   end
@@ -122,6 +146,7 @@ ActiveRecord::Schema.define(version: 2018_09_04_160704) do
     t.string "vkontakte"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "whatsapp"
   end
 
   create_table "users", force: :cascade do |t|

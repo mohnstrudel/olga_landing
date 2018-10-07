@@ -1,5 +1,12 @@
 class Front::StaticPagesController < FrontController
 
-	def index
+	def home
+		@services = Service.all
+		@gallery = Gallery.all
+		@gallery_count = Gallery.count
+		@reviews = Review.all
+		@posts = Post.all
+		@members = Member.all
+		@jobs = Job.all
 	end
 end

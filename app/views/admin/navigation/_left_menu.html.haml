@@ -61,15 +61,10 @@
           %li
             =link_to 'Новый сотрудник', new_admin_member_path
 
-      =nav_link "" do
+      =nav_link admin_settings_path do
         %i.fa.fa-cog
         %span.nav-label
-          =t('admin.navigation.settings.main')
-        %span.fa.arrow
-        %ul.nav.nav-second-level.collapse
-          %li.active
-            / =nav_link admin_settings_general_settings_path do
-            / =t('admin.navigation.settings.general')
+          Основные настройки
 
       =nav_link "" do
         %i.fa.fa-users
@@ -85,3 +80,13 @@
         %i.fa.fa-flask
         %span.nav-label
           Заявки
+      
+      =nav_link admin_galleries_path do
+        %i.fa.fa-photo
+        %span.nav-label
+          Галерея
+
+      =nav_link admin_reviews_path do
+        %i.fa.fa-photo
+        %span.nav-label
+          Отзывы

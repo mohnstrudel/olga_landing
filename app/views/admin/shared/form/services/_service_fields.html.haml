@@ -34,3 +34,19 @@
       %span.help-block.m-b-none Для удаления фотографий просто перезалей их
 
   .hr-line-dashed
+
+-if object.respond_to?(:price)
+  .form-group
+    %label.col-sm-2.control-label
+      Цена в рублях
+    .col-sm-10
+      =f.number_field :price, class: 'form-control'
+  .hr-line-dashed
+
+-if object.respond_to?(:duration)
+  .form-group
+    %label.col-sm-2.control-label
+      Длительность в минутах
+    .col-sm-10
+      =f.number_field :duration, class: 'form-control'
+  .hr-line-dashed

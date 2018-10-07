@@ -83,7 +83,14 @@
     / Requests part begin (only unique to requests fields)
     =render partial: "admin/shared/form/requests/request_fields", locals: { f: f, object: object }
     / Requests part end
+    
+    / Settings part begin (only unique to settings fields)
+    =render partial: "admin/shared/form/settings/setting_fields", locals: { f: f, object: object }
+    / Settings part end
 
+    / Reviews part begin (only unique to reviews fields)
+    =render partial: "admin/shared/form/reviews/review_fields", locals: { f: f, object: object }
+    / Reviews part end
 
     .hr-line-dashed
     .form-group

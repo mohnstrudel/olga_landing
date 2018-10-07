@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 		resources :requests
 		resources :post_categories
 		resources :service_categories
+		resources :galleries
+		resources :reviews
 	end
   
 

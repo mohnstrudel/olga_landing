@@ -1,0 +1,22 @@
+%section#works.section.section_border.works.scene
+  .works__bg
+    %span.works__drops.layer{"data-depth" => "0.40"}
+    %span.works__rect.works__rect_type_1.layer{"data-depth" => "0.30"}
+      %span.works__rect-figure
+    %span.works__rect.works__rect_type_2.layer{"data-depth" => "0.70"}
+      %span.works__rect-figure
+  .section__wrp.works__wrp
+    .section__header.works__header
+      .section__heading.section__heading_stone.works__heading.heading.heading_type_h3
+        Фото работ
+    .section__body.works__body
+      .works__gallery.js-gallery
+        .works__gallery-list
+          -@gallery.each do |image|
+            .works__gallery-item
+              %a.works__gallery-link.js-gallery-item{"data-fancybox" => "works_gallery", :href => image.picture.url}
+                %span.works__gallery-img{:style => "background-image: url(#{ asset_path image.picture.url });"}
+        -if @gallery_count >= 6
+          .works__gallery-footer
+            %a.works__gallery-more.button.button_theme_white.button_size_g.js-gallery-more{"data-start" => "6", :href => "javascript:void(0);"}
+              %span.button__text смотреть больше фото

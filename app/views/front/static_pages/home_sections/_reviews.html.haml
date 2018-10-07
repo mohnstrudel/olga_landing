@@ -1,0 +1,29 @@
+%section#reviews.section.reviews.scene.scene_vertical
+  .reviews__bg
+    %img.reviews__bg-drops.layer{:alt => "drops", "data-depth" => "0.40", :src => "#{asset_path 'reviews/drops.png' }"}/
+  .section__wrp.reviews__wrp
+    .section__header.reviews__header
+      .section__heading.reviews__heading.heading.heading_type_h3
+        Отзывы
+    .section__body.reviews__body
+      .reviews__slider-wrp
+        .reviews__slider.swiper-container.js-slider-reviews
+          .reviews__slider-wrapper.swiper-wrapper
+            -@reviews.each do |review|
+              .reviews__slide.swiper-slide
+                .reviews__slide-wrp
+                  .reviews__slide-top
+                    .reviews__star
+                      -review.rating.times do |rating|
+                        %span.reviews__star-item
+                    .reviews__caption.caption.caption_size_m
+                      =review.description
+                  .reviews__slide-bottom
+                    .reviews__profile
+                      %span.reviews__profile-img{:style => "background-image: url(#{ asset_path review.picture.url });"}
+                      .reviews__profile-caption.heading.heading_type_h6
+                        ="#{review.name}, #{review.age} лет, #{review.place}"
+        .reviews__arrow.reviews__arrow_prev.js-slider-reviews-prev
+          %span.icon.icon-arrow-left
+        .reviews__arrow.reviews__arrow_next.js-slider-reviews-next
+          %span.icon.icon-arrow-right

@@ -1,0 +1,24 @@
+-if object.respond_to?(:age)
+  .form-group
+    %label.col-sm-2.control-label
+      Возраст
+    .col-sm-10
+      =f.text_field :age, class: 'form-control'
+  .hr-line-dashed
+
+-if object.respond_to?(:place)
+  .form-group
+    %label.col-sm-2.control-label
+      Город
+    .col-sm-10
+      =f.text_field :place, class: 'form-control'
+  .hr-line-dashed
+
+-if object.respond_to?(:rating)
+  .form-group
+    %label.col-sm-2.control-label
+      Рейтинг 
+    .col-sm-10
+      =f.text_field :rating, class: 'form-control'
+      %span.help-block.m-b-none Целое число, от 1 до 5
+  .hr-line-dashed
