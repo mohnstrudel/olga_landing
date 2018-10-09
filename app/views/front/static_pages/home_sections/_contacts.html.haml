@@ -1,0 +1,45 @@
+%section#contacts.section.contacts
+  .section__wrp.contacts__wrp
+    .section__header.contacts__header
+      .section__heading.section__heading_stone.contacts__heading.heading.heading_type_h3
+        Контакты
+    .section__body.contacts__body
+      .contacts__grid
+        .contacts__grid-item.contacts__grid-item_map
+          .contacts__map.js-map-data{"data-lat" => "55.754002", "data-lng" => "37.635657"}
+            #map.contacts__map-frame
+        .contacts__grid-item.contacts__grid-item_text
+          .contacts__text
+            .contacts__text-item
+              .contacts__text-title.heading.heading_type_h4
+                МЫ НАХОДИМСЯ ПО АДРЕСУ:
+              .contacts__text-caption.caption.caption_size_l
+                =@settings.address
+            .contacts__text-item
+              .contacts__text-title.heading.heading_type_h4
+                МЫ РАБОТАЕМ:
+              .contacts__text-caption.caption.caption_size_l
+                %strong
+                  %nobr пн-вс
+                  9.00–22.00
+            .contacts__text-item
+              .contacts__text-title.heading.heading_type_h4
+                ВЫ МОЖЕТЕ ПОЗВОНИТЬ НАМ:
+              .contacts__text-caption.caption.caption_size_l
+                -if @settings.phone
+                  %a{:href => "tel:#{@settings.phone}"}
+                    %strong=@settings.phone
+                %br/
+                -if @settings.second_phone
+                  %a{:href => "tel:#{@settings.second_phone}"}
+                    %strong=@settings.second_phone
+            .contacts__text-item
+              .contacts__text-title.heading.heading_type_h4
+                МЫ В СОЦСЕТЯХ:
+              .contacts__social
+                %a.contacts__social-item{:href => @settings.instagram, :rel => "nofollow", :target => "_blank"}
+                  %img{:alt => "inst", :src => "#{asset_path 'inst.svg' }"}/
+                %a.contacts__social-item{:href => @settings.facebook, :rel => "nofollow", :target => "_blank"}
+                  %img{:alt => "fb", :src => "#{asset_path 'fb.svg' }"}/
+                %a.contacts__social-item{:href => @settings.vkontakte, :rel => "nofollow", :target => "_blank"}
+                  %img{:alt => "vk", :src => "#{asset_path 'vk.svg' }"}/

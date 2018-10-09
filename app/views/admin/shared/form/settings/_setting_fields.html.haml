@@ -1,3 +1,12 @@
+-if object.respond_to?(:second_phone)
+  .form-group
+    %label.col-sm-2.control-label
+      Второй (дополнительный телефон)
+    .col-sm-10
+      =f.text_area :second_phone, class: 'form-control'
+      %span.help-block.m-b-none Не путать с вотсапом! Это именно второй телефон для звонков.
+  .hr-line-dashed
+
 -if object.respond_to?(:instagram)
   .form-group
     %label.col-sm-2.control-label

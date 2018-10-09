@@ -1,0 +1,59 @@
+%footer.footer.page-footer
+  .footer__wrp
+    .footer__grid
+      .footer__left
+        .footer__nav-wrp
+          %nav.footer__nav.navigation.navigation_type_column
+            %ul.navigation__list
+              %li.navigation__item
+                %a.navigation__link.js-anchor-link{:href => "#promo"}
+                  Главная
+              %li.navigation__item
+                %a.navigation__link.js-anchor-link{:href => "#about"}
+                  о лаборатории
+              %li.navigation__item
+                %a.navigation__link.js-anchor-link{:href => "#services"}
+                  косметология
+              %li.navigation__item
+                %a.navigation__link.js-anchor-link{:href => "#news"}
+                  новости
+              %li.navigation__item
+                %a.navigation__link.js-anchor-link{:href => "#works"}
+                  фото работ
+            %ul.navigation__list
+              %li.navigation__item
+                %a.navigation__link.js-anchor-link{:href => "#reviews"}
+                  отзывы
+              %li.navigation__item
+                %a.navigation__link.js-anchor-link{:href => "#team"}
+                  наша команда
+              %li.navigation__item
+                %a.navigation__link.js-anchor-link{:href => "#vacancies"}
+                  вакансии
+              %li.navigation__item
+                %a.navigation__link.js-anchor-link{:href => "#contacts"}
+                  контакты
+        %a.footer__logo.js-anchor-link{:href => "#promo"}
+          %img{:alt => "WYS", :src => "#{asset_path 'logo.png' }"}/
+        .footer__phone
+          -if @settings.phone
+            %a.footer__phone-item{:href => "tel:#{@settings.phone}"}=@settings.phone
+          %a.footer__phone-item{:href => "tel:#{@settings.second_phone}"}=@settings.second_phone
+      .footer__center
+        %a.footer__logo.js-anchor-link{:href => "#promo"}
+          %img{:alt => "WYS", :src => "#{asset_path 'logo.png' }"}/
+      .footer__right
+        .footer__copy
+          .footer__copy-heading.heading
+            ="2015–#{Time.now.year} © Студия"
+            %nobr экспресс-маникюра
+            Лены Лениной
+            %br/
+            %a{:href => "javascript:void(0);"} Политика конфиденциальности
+          .footer__copy-caption.caption.caption_size_s
+            © «KOSMOS» косметология и салон красоты в Москве. Медицинская лицензия ЛО7701015749.
+            %br.md-hide/
+            ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ «ЗАБОТА», ИНН 7706451336, ОГРН 5177746121185.
+            %br.md-hide/
+            Все права защищены.
+/ /page-container
