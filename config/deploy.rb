@@ -45,7 +45,10 @@ set :yarn_roles, :all                                     # default
 set :yarn_env_variables, {}
 
 
+
+
 # Link the dirs, so uploaded assets won't be deleted after each deployment
+set :linked_files, %w{config/master.key}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads node_modules client/node_modules}
 
 
