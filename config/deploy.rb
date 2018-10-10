@@ -67,7 +67,7 @@ namespace :deploy do
   desc 'Transfer secret.key'
   task :master_key do
     on roles(:app) do
-      execute("scp config/master.key deploy@#{fetch(:server)}:/home/deploy/apps/#{fetch(:application)}/shared/config/")
+      # execute("scp config/master.key deploy@#{fetch(:server)}:/home/deploy/apps/#{fetch(:application)}/shared/config/")
       # append :linked_files, "config/master.key"
     end
   end
