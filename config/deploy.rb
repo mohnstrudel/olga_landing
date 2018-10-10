@@ -1,5 +1,6 @@
 # Change these
-server '89.223.90.159', port: 22, roles: [:web, :app, :db], primary: true
+set :server, "89.223.90.159"
+server "#{fetch(:server)}", port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:mohnstrudel/olga_landing.git'
 set :application,     'olga_landing'
@@ -63,13 +64,13 @@ end
 
 namespace :deploy do
 
-  # desc 'Transfer secret.key'
-  # task :master_key do
-  #   on roles(:app) do
-  #     # execute("scp config/master.key deploy@165.227.143.13:/home/deploy/apps/handsomecake_store/current/config/")
-  #     # append :linked_files, "config/master.key"
-  #   end
-  # end
+  desc 'Transfer secret.key'
+  task :master_key do
+    on roles(:app) do
+      execute("scp config/master.key deploy@#{fetch(:server)}:/home/deploy/apps/#{fetch(:application)}/shared/config/")
+      # append :linked_files, "config/master.key"
+    end
+  end
   
   desc 'Run rake yarn:install'
   task :yarn_install do
@@ -112,7 +113,7 @@ namespace :deploy do
 
 
   before :starting,     :check_revision
-  # before :starting,     :master_key
+  before :starting,     :master_key
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart

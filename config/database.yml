@@ -82,4 +82,4 @@ production:
   <<: *default
   database: olga_landing_production
   username: olga_landing
-  password: <%= ENV['OLGA_LANDING_DATABASE_PASSWORD'] %>
+  password: Figaro.env.database_password
