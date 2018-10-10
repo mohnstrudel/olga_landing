@@ -64,31 +64,31 @@
             с вами в ближайшее время.
           %button.feedback__close.button.button_theme_white.button_size_form.js-feedback-close
             Закрыть
-        %form.feedback__form-data.form-data.js-form-feedback{:action => "#"}
+        =form_with(model: @book_request, class: 'feedback__form-data form-data js-form-feedback') do |f|
           .feedback__heading.caption.caption_size_xs
             Укажите, пожалуйста, свои контактные данные, чтобы наш специалист смог связаться с вами для подтверждения записи
           .feedback__logo
             %img{:alt => "WYS", :src => "#{asset_path 'logo.png' }"}/
           .form-data__parametr
-            %input.form-data__input{"data-required" => "", :name => "online-name", :placeholder => "* Имя", :type => "text"}/
+            =f.text_field :name, class: 'form-data__input', data: { required: "" }, placeholder: '* Имя'
           .form-data__parametr
-            %input.form-data__input{"data-required" => "", :name => "online-surname", :placeholder => "* Фамилия", :type => "text"}/
+            =f.text_field :last_name, class: 'form-data__input', data: { required: "" }, placeholder: '* Фамилия'
           .form-data__parametr
-            %input.form-data__input.js-phone-mask{"data-phone" => "", :name => "online-phone", :placeholder => "* Номер телефона", :type => "text"}/
+            =f.text_field :phone, class: 'form-data__input js-phone-mask', data: { phone: "" }, placeholder: '* Номер телефона'
           .form-data__parametr
-            %input.form-data__input{"data-required" => "", :name => "online-procedure", :placeholder => "* Желаемая процедура", :type => "text"}/
+            / =f.select :service_id, class: 'form-data__input', data: { required: "" }, placeholder: '* Желаемая процедура'
+            =f.collection_select(:service_id, Service.all, :id, :title, { :prompt => '* Желаемая процедура'},  { class: 'form-data__input' } )
           .form-data__parametr
-            %input.form-data__input.js-date-mask{"data-required" => "", :name => "online-date", :placeholder => "* Выбрать дату (дд.мм.гг)", :type => "text"}/
+            =f.text_field :date, class: 'form-data__input js-date-mask', data: { required: "" }, placeholder: "* Выбрать дату (дд.мм.гг)"
           .form-data__parametr.form-data__parametr_privacy
             .form-data__checkbox.checkbox
               %label.checkbox__label
-                %input.checkbox__input{"data-check" => "", :name => "online-privacy", :type => "checkbox"}/
+                =f.check_box :accept, class: 'checkbox__input', data: { check: "" }
                 %span.checkbox__check
                 %span.checkbox__caption
                   согласие на обработку персональных данных
           .form-data__parametr.form-data__parametr_submit
-            %button.form-data__submit.button.button_theme_white.button_size_form{:type => "submit"}
-              Записаться
+            =f.submit 'Записаться', class: 'form-data__submit button button_theme_white button_size_form'
           .feedback__hint.caption
             * после отправки формы наш специалист свяжется с вами, чтобы подобрать наиболее удобное для вас время, и подтвердить запись.
     %section#promo.section.promo.scene
@@ -131,29 +131,29 @@
                       %br/
                   %button.feedback__close.button.button_theme_white.button_size_form.js-feedback-close
                     Закрыть
-                %form.feedback__form-data.form-data.js-form-feedback{:action => "#"}
+                =form_with(model: @consult_request, class: 'feedback__form-data form-data js-form-feedback') do |f|
+                  / %form.feedback__form-data.form-data.js-form-feedback{:action => "#"}
                   .feedback__heading.caption.caption_size_xs
                     Укажите, пожалуйста, свои контактные данные, чтобы наш специалист смог связаться с вами для предоставления консультации
                   .feedback__logo
                     %img{:alt => "WYS", :src => "#{asset_path 'logo.png' }"}/
                   .form-data__parametr
-                    %input.form-data__input{"data-required" => "", :name => "consult-name", :placeholder => "* Имя", :type => "text"}/
+                    =f.text_field :name, class: 'form-data__input', data: {required: ""}, placeholder: "* Имя"
                   .form-data__parametr
-                    %input.form-data__input{"data-required" => "", :name => "consult-surname", :placeholder => "* Фамилия", :type => "text"}/
+                    =f.text_field :last_name, class: 'form-data__input', data: {required: ""}, placeholder: "* Фамилия"
                   .form-data__parametr
-                    %input.form-data__input.js-phone-mask{"data-phone" => "", :name => "consult-phone", :placeholder => "* Номер телефона", :type => "text"}/
+                    =f.text_field :phone, class: 'form-data__input js-phone-mask', data: { phone: "" }, placeholder: "* Номер телефона"
                   .form-data__parametr
-                    %textarea.form-data__textarea{"data-required" => "", :name => "consult-text", :placeholder => "* ВАШ ВОПРОС"}
+                    =f.text_area :message, class: 'form-data__textarea', data: { required: "" }, placeholder: "* ВАШ ВОПРОС"
                   .form-data__parametr.form-data__parametr_privacy
                     .form-data__checkbox.checkbox
                       %label.checkbox__label
-                        %input.checkbox__input{"data-check" => "", :name => "consult-privacy", :type => "checkbox"}/
+                        =f.check_box :accept, data: { check: "" }, class: 'checkbox__input'
                         %span.checkbox__check
                         %span.checkbox__caption
                           согласие на обработку персональных данных
                   .form-data__parametr.form-data__parametr_submit
-                    %button.form-data__submit.button.button_theme_white.button_size_form{:type => "submit"}
-                      Отправить
+                    =f.submit 'Отправить', class: "form-data__submit button button_theme_white button_size_form"
     %section#about.section.about.scene.scene_min
       %span.about__bg.layer{"data-depth" => "0.60"}
       .section__wrp.about__wrp

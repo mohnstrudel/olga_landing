@@ -8,5 +8,9 @@ class Front::StaticPagesController < FrontController
 		@posts = Post.all
 		@members = Member.all
 		@jobs = Job.all
+
+		@consult_request = ConsultRequest.new
+		@book_request = BookRequest.new
+
 	end
 end

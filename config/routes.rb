@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   
   scope module: :front do
   	root "static_pages#home"
+
+  	# Тут крутой неймспейсинг запросов
+    resources :consult_requests, only: [:new, :create], controller: 'requests', type: 'ConsultRequest'
+    resources :book_requests, only: [:new, :create], controller: 'requests', type: 'BookRequest'
   end
 
   namespace :admin do
