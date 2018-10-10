@@ -112,7 +112,7 @@ namespace :deploy do
 
 
   before :starting,     :check_revision
-  before :starting,     :master_key
+  # before :starting,     :master_key
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
