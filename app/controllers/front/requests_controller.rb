@@ -8,6 +8,7 @@ class Front::RequestsController < FrontController
 
 		respond_to do |format|
 			if @request.save
+        RequestMailer.notify_admin(@request).deliver_now
 				format.js 
 			else
 				format.js { render partial: 'fail' }

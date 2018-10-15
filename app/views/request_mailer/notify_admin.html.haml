@@ -1,0 +1,16 @@
+%h2=@subject
+
+%h3 Данные заявки:
+
+-if @request.name.present?
+	%p="Имя: #{@request.name}"
+-if @request.last_name.present?
+	%p="Фамилия: #{@request.last_name}"
+-if @request.phone.present?
+	%p="Телефон: #{@request.phone}"
+-if @request.message.present?
+	%p="Сообщение: #{@request.message}"
+-if @request.service_id.present?
+	%p="Выбранная услуга: #{Service.find(service_id).title}"
+-if @request.date.present?
+	%p="Выбранная дата: #{@request.date}"
