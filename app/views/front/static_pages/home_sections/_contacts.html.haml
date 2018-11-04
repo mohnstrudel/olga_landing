@@ -37,9 +37,18 @@
               .contacts__text-title.heading.heading_type_h4
                 МЫ В СОЦСЕТЯХ:
               .contacts__social
-                %a.contacts__social-item{:href => @settings.instagram, :rel => "nofollow", :target => "_blank"}
-                  %img{:alt => "inst", :src => "#{asset_path 'inst.svg' }"}/
-                %a.contacts__social-item{:href => @settings.facebook, :rel => "nofollow", :target => "_blank"}
-                  %img{:alt => "fb", :src => "#{asset_path 'fb.svg' }"}/
-                %a.contacts__social-item{:href => @settings.vkontakte, :rel => "nofollow", :target => "_blank"}
-                  %img{:alt => "vk", :src => "#{asset_path 'vk.svg' }"}/
+                -if @setting.try(:instagram)
+                  %a.contacts__social-item{:href => @settings.instagram, :rel => "nofollow", :target => "_blank"}
+                    %img{:alt => "inst", :src => "#{asset_path 'inst.png' }"}/
+                -if @setting.try(:facebook)
+                  %a.contacts__social-item{:href => @settings.facebook, :rel => "nofollow", :target => "_blank"}
+                    %img{:alt => "fb", :src => "#{asset_path 'fb.png' }"}/
+                -if @setting.try(:vkontakte)
+                  %a.contacts__social-item{:href => @settings.vkontakte, :rel => "nofollow", :target => "_blank"}
+                    %img{:alt => "vk", :src => "#{asset_path 'vk.png' }"}/
+                -if @setting.try(:whatsapp)
+                  %a.contacts__social-item{:href => @settings.whatsapp, :rel => "nofollow", :target => "_blank"}
+                    %img{:alt => "whatsapp", :src => "#{asset_path 'wa.png' }"}/
+                -if @setting.try(:telegram)
+                  %a.contacts__social-item{:href => @settings.telegram, :rel => "nofollow", :target => "_blank"}
+                    %img{:alt => "telegram", :src => "#{asset_path 'tg.png' }"}/
